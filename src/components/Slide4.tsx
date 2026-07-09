@@ -33,7 +33,7 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
   return (
     <div className="relative overflow-hidden" style={{ width: W, height: H, background: '#070D14', fontFamily: "'Sora', sans-serif", backgroundImage: SLIDE_BG_LEFT }}>
       <div className="absolute inset-0 pointer-events-none" style={GRID_CSS} />
-      <div className={`relative z-10 w-full h-full flex flex-col transition-all duration-700 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={mobile ? { ...SLIDE_PAD_MOBILE, justifyContent: 'flex-end' } : SLIDE_PAD}>
+      <div className={`relative z-10 w-full h-full flex flex-col transition-all duration-700 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={mobile ? { ...SLIDE_PAD_MOBILE, justifyContent: 'flex-end' } : { ...SLIDE_PAD, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingLeft: 180, paddingRight: 180 }}>
         {mobile ? (
           // ── MOBILE ───────────────────────────────────────────────────────────
           <>
@@ -89,9 +89,9 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
         ) : (
           // ── DESKTOP ──────────────────────────────────────────────────────────
           <>
-            {/* Split layout: Content LEFT (with generous left margin), Images RIGHT */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%', paddingTop: 20, paddingLeft: 180, paddingRight: 180 }}>
-              {/* Left: Title + Cards column - auto height, max width */}
+            {/* Split layout: Content LEFT, Images RIGHT - vertically centered */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '100%' }}>
+              {/* Left: Title + Cards column - max width, auto height */}
               <div style={{ maxWidth: 800, display: 'flex', flexDirection: 'column', gap: 28, flex: 1 }}>
                 <SectionTitle title="Desempenho de Conteúdo." />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -127,10 +127,10 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
                   </div>
                 </div>
               </div>
-              {/* Right: images - fixed width, top aligned */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', width: 480, flexShrink: 0, marginLeft: 60 }}>
-                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57 (2).jpeg" alt="" style={{ width: Math.round(IMG_W * 0.82), height: Math.round(IMG_H * 0.82), objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -70, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
-                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58 (1).jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
+              {/* Right: images - fixed width, VERTICALLY CENTERED */}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 480, flexShrink: 0, gap: 20, marginLeft: 60 }}>
+                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57 (2).jpeg" alt="" style={{ width: Math.round(IMG_W * 0.82), height: Math.round(IMG_H * 0.82), objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, transform: 'rotate(-5deg)', transformOrigin: 'center center', zIndex: 1, flexShrink: 0 }} />
+                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58 (1).jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
               </div>
             </div>
           </>
