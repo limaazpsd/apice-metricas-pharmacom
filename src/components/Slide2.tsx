@@ -93,19 +93,19 @@ export function Slide2({ mobile }: { mobile?: boolean }) {
             </div>
           </>
 ) : (
-// ── DESKTOP LAYOUT ───────────────────────────────────────────────────
+          // ── DESKTOP LAYOUT ───────────────────────────────────────────────────
           <>
-            {/* Split layout: Content LEFT, Images RIGHT - space-between with generous side padding */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%', paddingTop: 20, paddingLeft: 180, paddingRight: 180 }}>
-              {/* Left: Title + 2×2 cards grid - max width, auto height */}
-              <div style={{ maxWidth: 800, display: 'flex', flexDirection: 'column', gap: 28, flex: 1 }}>
+            {/* Centered row: two containers side by side, vertically centered as a pair */}
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%', paddingLeft: 100, paddingRight: 100, gap: 80 }}>
+              {/* LEFT CONTAINER: Written content - LEFT ALIGNED */}
+              <div style={{ maxWidth: 800, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 28 }}>
                 <SectionTitle title="Visão Geral do Perfil." />
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'auto auto', gap: 20 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'auto auto', gap: 20, width: '100%' }}>
                   {cards.map((c, i) => <MetricCard key={i} index={i} hovered={hovered} setHovered={setHovered} {...c} />)}
                 </div>
               </div>
-              {/* Right: images - fixed width, top aligned */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', width: 480, flexShrink: 0, marginLeft: 60 }}>
+              {/* RIGHT CONTAINER: Images - CENTER CENTER ALIGNED */}
+              <div style={{ width: 480, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 20 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57.jpeg" alt="" style={{ width: Math.round(IMG_W * 0.82), height: Math.round(IMG_H * 0.82), objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -70, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58.jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
               </div>

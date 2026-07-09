@@ -83,10 +83,10 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
 ) : (
           // ── DESKTOP ──────────────────────────────────────────────────────────
           <>
-            {/* Split layout: Content LEFT, Image RIGHT - space-between with side padding */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%', paddingTop: 20, paddingLeft: 180, paddingRight: 180 }}>
-              {/* Left: Title + Cards column - max width, auto height */}
-              <div style={{ maxWidth: 800, display: 'flex', flexDirection: 'column', gap: 28, flex: 1 }}>
+            {/* Centered row: two containers side by side, vertically centered as a pair */}
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%', paddingLeft: 100, paddingRight: 100, gap: 80 }}>
+              {/* LEFT CONTAINER: Written content - LEFT ALIGNED */}
+              <div style={{ maxWidth: 800, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 28 }}>
                 <SectionTitle title="Público e Atividade." />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, flex: '0 0 auto' }}>
@@ -121,8 +121,8 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
                   </div>
                 </div>
               </div>
-              {/* Right: image - fixed width, top aligned */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', width: 480, flexShrink: 0, marginLeft: 60 }}>
+              {/* RIGHT CONTAINER: Image - CENTER CENTER ALIGNED */}
+              <div style={{ width: 480, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56 (1).jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
               </div>
             </div>

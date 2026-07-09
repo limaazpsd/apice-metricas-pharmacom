@@ -93,10 +93,10 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
         ) : (
           // ── DESKTOP ──────────────────────────────────────────────────────────
           <>
-            {/* Centered layout: content LEFT with margin, image RIGHT - both vertically centered */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', paddingLeft: 120, paddingRight: 120 }}>
-              {/* Left: Title + Cards column - max width, auto height, vertically centered */}
-              <div style={{ maxWidth: 720, display: 'flex', flexDirection: 'column', gap: 18, flex: 1 }}>
+            {/* Two containers centered in slide: LEFT content (left-aligned), RIGHT image (center-center) */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', paddingLeft: 120, paddingRight: 120, gap: 60 }}>
+              {/* LEFT CONTAINER: written content - left aligned */}
+              <div style={{ maxWidth: 720, display: 'flex', flexDirection: 'column', gap: 18, flex: 1, textAlign: 'left' }}>
                 <SectionTitle title="Expansão e Fidelização." />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                   {/* Reels - proper size */}
@@ -127,7 +127,7 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
                   </div>
                 </div>
               </div>
-              {/* Right: image - proper size, vertically centered */}
+              {/* RIGHT CONTAINER: image - center-center aligned */}
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 440, flexShrink: 0, marginLeft: 50 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56.jpeg" alt="" style={{ width: Math.round(IMG_W * 0.88), height: Math.round(IMG_H * 0.88), objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
               </div>
