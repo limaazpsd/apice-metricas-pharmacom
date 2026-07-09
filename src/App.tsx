@@ -8,7 +8,7 @@ import { Slide5 } from './components/Slide5';
 import { Slide6 } from './components/Slide6';
 
 const DESKTOP = { W: 1920, H: 1080 };
-const MOBILE  = { W: 1080, H: 1600 };
+const MOBILE  = { W: 1080, H: 1900 };
 
 const slides = [
   { component: Slide1, num: '01', title: 'INTRODUÇÃO' },
