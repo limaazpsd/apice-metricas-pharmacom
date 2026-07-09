@@ -96,11 +96,14 @@ export function Slide2({ mobile }: { mobile?: boolean }) {
           // ── DESKTOP LAYOUT ───────────────────────────────────────────────────
           <>
             <SectionTitle title="Visão Geral do Perfil." />
-            <div style={{ display: 'flex', gap: 48, flex: 1, minHeight: 0 }}>
-              <div style={{ flexShrink: 0, width: 750, display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'auto auto', gap: 20 }}>
+            {/* Row centered horizontally: cards (750px) + gap (48px) + images (~450px) = ~1248px centered in 1920px */}
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', gap: 48, width: '100%', paddingTop: 20 }}>
+              {/* Left: 2×2 cards grid - fixed width, auto height */}
+              <div style={{ width: 750, display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'auto auto', gap: 20 }}>
                 {cards.map((c, i) => <MetricCard key={i} index={i} hovered={hovered} setHovered={setHovered} {...c} />)}
               </div>
-              <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {/* Right: images - fixed width, centered vertically with cards */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 450 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57.jpeg" alt="" style={{ width: Math.round(IMG_W * 0.82), height: Math.round(IMG_H * 0.82), objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -70, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58.jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
               </div>

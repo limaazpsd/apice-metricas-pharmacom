@@ -94,8 +94,10 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
           // ── DESKTOP ──────────────────────────────────────────────────────────
           <>
             <SectionTitle title="Expansão e Fidelização." />
-            <div style={{ display: 'flex', gap: 48, flex: 1, minHeight: 0 }}>
-              <div style={{ flexShrink: 0, width: 750, display: 'flex', flexDirection: 'column', gap: 20 }}>
+            {/* Row centered horizontally */}
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', gap: 48, width: '100%', paddingTop: 20 }}>
+              {/* Left: cards column - fixed width, auto height */}
+              <div style={{ width: 750, display: 'flex', flexDirection: 'column', gap: 20 }}>
                 <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...card(0, 'h'), padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
                     <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Video size={20} /></IconBadge>
@@ -121,7 +123,8 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
                   </ul>
                 </div>
               </div>
-              <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {/* Right: image - fixed width, centered */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 450 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56.jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
               </div>
             </div>
