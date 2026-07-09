@@ -95,8 +95,8 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
           <>
             <SectionTitle title="Expansão e Fidelização." />
             <div style={{ display: 'flex', gap: 48, flex: 1, minHeight: 0 }}>
-              <div style={{ flexShrink: 0, width: 750, height: '100%', display: 'flex', flexDirection: 'column', gap: 20 }}>
-                <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...card(0, 'h'), flex: 1, padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ flexShrink: 0, width: 750, display: 'flex', flexDirection: 'column', gap: 20 }}>
+                <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...card(0, 'h'), padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
                     <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Video size={20} /></IconBadge>
                     <h3 style={{ color: 'white', fontWeight: 700, fontSize: 22, margin: 0 }}>A Importância dos Reels</h3>
@@ -108,7 +108,7 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
                     <BulletItem icon="▹" color="#60a5fa" text='Temas "blockbuster" precisam virar vídeos curtos.' />
                   </ul>
                 </div>
-                <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...card(1, 'y'), flex: 1, padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
+                <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...card(1, 'y'), padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
                     <IconBadge color="#facc15" bg="rgba(234,179,8,0.2)"><HeartHandshake size={20} /></IconBadge>
                     <h3 style={{ color: 'white', fontWeight: 700, fontSize: 22, margin: 0 }}>Retenção e Stories</h3>

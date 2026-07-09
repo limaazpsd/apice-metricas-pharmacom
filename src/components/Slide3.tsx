@@ -85,7 +85,7 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
           <>
             <SectionTitle title="Público e Atividade." />
             <div style={{ display: 'flex', gap: 48, flex: 1, minHeight: 0 }}>
-              <div style={{ flexShrink: 0, width: 750, height: '100%', display: 'flex', flexDirection: 'column', gap: 20 }}>
+              <div style={{ flexShrink: 0, width: 750, display: 'flex', flexDirection: 'column', gap: 20 }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, flex: '0 0 auto' }}>
                   <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(0), padding: '26px 28px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
@@ -103,7 +103,7 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
                     <p style={{ color: 'white', fontSize: 48, fontWeight: 900, lineHeight: 1.1, marginTop: 10 }}>96,3% <span style={{ fontSize: 17, fontWeight: 500, color: '#64748b' }}>Brasil</span></p>
                   </div>
                 </div>
-                <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), flex: 1, padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
+                <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
                     <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Clock size={20} /></IconBadge>
                     <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Horários de Pico</span>

@@ -91,7 +91,7 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
           <>
             <SectionTitle title="Desempenho de Conteúdo." />
             <div style={{ display: 'flex', gap: 48, flex: 1, minHeight: 0 }}>
-              <div style={{ flexShrink: 0, width: 780, height: '100%', display: 'flex', flexDirection: 'column', gap: 20 }}>
+              <div style={{ flexShrink: 0, width: 780, display: 'flex', flexDirection: 'column', gap: 20 }}>
                 <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(0, 'highlight'), flex: '0 0 auto', padding: '24px 28px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
                     <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Trophy size={20} /></IconBadge>
@@ -106,7 +106,7 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
                     ))}
                   </div>
                 </div>
-                <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
                   <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(1), padding: '24px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
                       <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)"><LayoutGrid size={20} /></IconBadge>

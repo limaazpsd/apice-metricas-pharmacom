@@ -97,7 +97,7 @@ export function Slide2({ mobile }: { mobile?: boolean }) {
           <>
             <SectionTitle title="Visão Geral do Perfil." />
             <div style={{ display: 'flex', gap: 48, flex: 1, minHeight: 0 }}>
-              <div style={{ flexShrink: 0, width: 750, height: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: 20 }}>
+              <div style={{ flexShrink: 0, width: 750, display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'auto auto', gap: 20 }}>
                 {cards.map((c, i) => <MetricCard key={i} index={i} hovered={hovered} setHovered={setHovered} {...c} />)}
               </div>
               <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
