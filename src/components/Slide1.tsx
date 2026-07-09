@@ -51,11 +51,11 @@ export function Slide1({ mobile }: { mobile?: boolean }) {
   useEffect(() => { const t = setTimeout(() => setShow(true), 80); return () => clearTimeout(t); }, []);
 
   const W = mobile ? 1080 : 1920;
-  const H = mobile ? 1900 : 1080;
+  const H = mobile ? 1440 : 1080;
 
   return (
     <div
-      className={`relative ${mobile ? 'overflow-y-auto overflow-x-hidden' : 'overflow-hidden'}`}
+      className="relative overflow-hidden"
       style={{ width: W, height: H, background: '#070D14', fontFamily: "'Sora', sans-serif", backgroundImage: SLIDE_BG_RIGHT }}
     >
       {/* Grid mesh */}
