@@ -127,8 +127,8 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
                   </div>
                 </div>
               </div>
-              {/* Right: images - fixed width, VERTICALLY CENTERED */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 480, flexShrink: 0, gap: 20, marginLeft: 60 }}>
+              {/* Right: images - fixed width, VERTICALLY CENTERED, side by side */}
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 480, flexShrink: 0, gap: 20, marginLeft: 60 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57 (2).jpeg" alt="" style={{ width: Math.round(IMG_W * 0.82), height: Math.round(IMG_H * 0.82), objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, transform: 'rotate(-5deg)', transformOrigin: 'center center', zIndex: 1, flexShrink: 0 }} />
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58 (1).jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
               </div>
