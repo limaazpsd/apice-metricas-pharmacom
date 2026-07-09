@@ -37,9 +37,9 @@ function StatCard({ icon, value, label, sub, mobile }: { icon: React.ReactNode; 
         {icon}
       </div>
       <div style={{ minWidth: 0 }}>
-        <p style={{ color: 'white', fontWeight: 800, fontSize: mobile ? 56 : 44, lineHeight: 1, margin: 0 }}>{value}</p>
-        <p style={{ color: '#64748b', fontWeight: 600, fontSize: mobile ? 20 : 14, margin: '8px 0 0', letterSpacing: '0.05em' }}>{label}</p>
-        {sub && <p style={{ color: '#34d399', fontWeight: 600, fontSize: mobile ? 18 : 13, margin: '5px 0 0' }}>{sub}</p>}
+        <p style={{ color: 'white', fontWeight: 800, fontSize: mobile ? 46 : 44, lineHeight: 1, margin: 0 }}>{value}</p>
+        <p style={{ color: '#64748b', fontWeight: 600, fontSize: mobile ? 16 : 14, margin: '6px 0 0', letterSpacing: '0.05em' }}>{label}</p>
+        {sub && <p style={{ color: '#34d399', fontWeight: 600, fontSize: mobile ? 14 : 13, margin: '4px 0 0' }}>{sub}</p>}
       </div>
     </div>
   );
@@ -51,7 +51,7 @@ export function Slide1({ mobile }: { mobile?: boolean }) {
   useEffect(() => { const t = setTimeout(() => setShow(true), 80); return () => clearTimeout(t); }, []);
 
   const W = mobile ? 1080 : 1920;
-  const H = mobile ? 1900 : 1080;
+  const H = mobile ? 1600 : 1080;
 
   return (
     <div
@@ -76,13 +76,13 @@ export function Slide1({ mobile }: { mobile?: boolean }) {
         {/* Pill badge */}
         <div style={{
           display: 'inline-flex', alignItems: 'center', gap: 10,
-          padding: mobile ? '12px 30px' : '9px 24px', borderRadius: 999,
+          padding: mobile ? '10px 26px' : '9px 24px', borderRadius: 999,
           background: 'rgba(29,78,216,0.1)',
           border: '1px solid rgba(37,99,235,0.3)',
-          marginBottom: mobile ? 32 : 36,
+          marginBottom: mobile ? 24 : 36,
         }}>
-          <span style={{ color: '#60a5fa', fontSize: mobile ? 28 : 18, lineHeight: 1 }}>📊</span>
-          <span style={{ color: '#94a3b8', fontWeight: 700, fontSize: mobile ? 20 : 13, letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+          <span style={{ color: '#60a5fa', fontSize: mobile ? 24 : 18, lineHeight: 1 }}>📊</span>
+          <span style={{ color: '#94a3b8', fontWeight: 700, fontSize: mobile ? 16 : 13, letterSpacing: '0.18em', textTransform: 'uppercase' }}>
             Relatório de Performance · Instagram
           </span>
         </div>
@@ -91,13 +91,13 @@ export function Slide1({ mobile }: { mobile?: boolean }) {
         <h1 style={{
           fontFamily: "'Sora', sans-serif",
           fontWeight: 800,
-          fontSize: mobile ? 120 : 118,
+          fontSize: mobile ? 92 : 118,
           lineHeight: 0.9,
           letterSpacing: '-0.02em',
           textAlign: 'center',
           color: 'white',
           margin: 0,
-          marginBottom: mobile ? 24 : 22,
+          marginBottom: mobile ? 18 : 22,
         }}>
           Métricas<br />
           <span style={{ color: '#1d4ed8' }}>Pharmacom</span>
@@ -111,7 +111,7 @@ export function Slide1({ mobile }: { mobile?: boolean }) {
         <p style={{
           color: 'rgba(255,255,255,0.72)',
           fontWeight: 500,
-          fontSize: mobile ? 30 : 26,
+          fontSize: mobile ? 22 : 26,
           textAlign: 'center',
           letterSpacing: '-0.01em',
           margin: 0,
@@ -121,7 +121,7 @@ export function Slide1({ mobile }: { mobile?: boolean }) {
         </p>
 
         {/* Period */}
-        <p style={{ color: '#475569', fontSize: mobile ? 22 : 18, fontWeight: 500, margin: 0, marginBottom: mobile ? 60 : 60, textAlign: 'center' }}>
+        <p style={{ color: '#475569', fontSize: mobile ? 18 : 18, fontWeight: 500, margin: 0, marginBottom: mobile ? 40 : 60, textAlign: 'center' }}>
           Período analisado:{mobile ? <br /> : <span>&nbsp;</span>}
           <span style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>28 de Maio a 06 de Julho de 2025</span>
         </p>

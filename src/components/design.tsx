@@ -14,11 +14,11 @@ export function useIsMobile() {
 // Shared design constants for all slides
 // Fixed App header is ~70px on screen. At scale 0.55, 130px slide-space → 71.5px screen — just clears the header.
 export const SLIDE_PAD        = { padding: '130px 100px 72px' } as const;
-export const SLIDE_PAD_MOBILE = { padding: '240px 60px 240px'  } as const;
+export const SLIDE_PAD_MOBILE = { padding: '60px 60px'  } as const;
 
-// Mobile image sizes (portrait canvas 1080×1900)
-export const MOBILE_IMG_W = 600;
-export const MOBILE_IMG_H = 760;
+// Mobile image sizes
+export const MOBILE_IMG_W = 440;
+export const MOBILE_IMG_H = 460;
 
 // Card backgrounds
 export const BG_CARD   = 'rgba(10, 15, 35, 0.9)';

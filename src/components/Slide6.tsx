@@ -12,7 +12,7 @@ export function Slide6({ mobile }: { mobile?: boolean }) {
   useEffect(() => { const t = setTimeout(() => setShow(true), 60); return () => clearTimeout(t); }, []);
 
   const W = mobile ? 1080 : 1920;
-  const H = mobile ? 1900 : 1080;
+  const H = mobile ? 1600 : 1080;
 
   const card = (i: number, variant: 'h' | 'g' | 'r') => {
     const isHov = hovered === i;

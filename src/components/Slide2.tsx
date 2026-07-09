@@ -36,10 +36,10 @@ function MetricCard({ index, hovered, setHovered, icon, iconBg, iconColor, label
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
         <IconBadge color={iconColor} bg={iconBg} mobile={mobile}>{icon}</IconBadge>
-        <span style={{ color: labelColor, fontSize: mobile ? 16 : 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>{label}</span>
+        <span style={{ color: labelColor, fontSize: mobile ? 14 : 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>{label}</span>
       </div>
-      <p style={{ color: valueColor, fontSize: mobile ? 72 : 54, fontWeight: 900, lineHeight: 1, margin: 0, marginBottom: 10 }}>{value}</p>
-      <p style={{ color: subColor, fontSize: mobile ? 20 : 15, fontWeight: 500, margin: 0 }}>{sub}</p>
+      <p style={{ color: valueColor, fontSize: mobile ? 56 : 54, fontWeight: 900, lineHeight: 1, margin: 0, marginBottom: 10 }}>{value}</p>
+      <p style={{ color: subColor, fontSize: mobile ? 16 : 15, fontWeight: 500, margin: 0 }}>{sub}</p>
     </div>
   );
 }
@@ -57,7 +57,7 @@ export function Slide2({ mobile }: { mobile?: boolean }) {
   useEffect(() => { const t = setTimeout(() => setShow(true), 60); return () => clearTimeout(t); }, []);
 
   const W = mobile ? 1080 : 1920;
-  const H = mobile ? 1900 : 1080;
+  const H = mobile ? 1600 : 1080;
 
   return (
     <div
@@ -74,9 +74,9 @@ export function Slide2({ mobile }: { mobile?: boolean }) {
           // ── MOBILE LAYOUT ────────────────────────────────────────────────────
           <>
             {/* Image section — centered at top */}
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 760, flexShrink: 0 }}>
-              <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57.jpeg" alt="" style={{ width: Math.round(MOBILE_IMG_W * 0.82), height: Math.round(MOBILE_IMG_H * 0.82), objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -50, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
-              <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58.jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 460, flexShrink: 0 }}>
+              <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57.jpeg" alt="" style={{ width: Math.round(MOBILE_IMG_W * 0.82), height: Math.round(MOBILE_IMG_H * 0.82), objectFit: 'contain', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -50, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
+              <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58.jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'contain', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
             </div>
             {/* Title */}
             <div style={{ marginTop: 32 }}><SectionTitle title="Visão Geral do Perfil." mobile={mobile} /></div>

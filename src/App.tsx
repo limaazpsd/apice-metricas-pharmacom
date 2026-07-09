@@ -90,7 +90,7 @@ export default function App() {
             transition: 'opacity 0.28s ease',
           }}
         >
-          <div style={{ width: W, height: H, transform: `scale(${scale})`, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }}>
+          <div style={{ width: W, height: H, transform: `scale(${scale})`, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Comp mobile={isMobile} />
           </div>
         </div>
