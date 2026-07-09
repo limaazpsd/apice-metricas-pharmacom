@@ -37,12 +37,15 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
         {mobile ? (
           // ── MOBILE ───────────────────────────────────────────────────────────
           <>
-            {/* Stacked images — centered */}
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: MOBILE_IMG_H, flexShrink: 0 }}>
-              <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57 (2).jpeg" alt="" style={{ width: Math.round(MOBILE_IMG_W * 0.82), height: Math.round(MOBILE_IMG_H * 0.82), objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -50, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
-              <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58 (1).jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
+            {/* Absolute Top Image with Base Fade */}
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: 860, zIndex: 0, pointerEvents: 'none' }}>
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', justifyContent: 'center', paddingTop: 80 }}>
+                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57 (2).jpeg" alt="" style={{ width: Math.round(MOBILE_IMG_W * 0.82), height: Math.round(MOBILE_IMG_H * 0.82), objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -50, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
+                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58 (1).jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
+              </div>
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, #070D14 100%)', zIndex: 3 }} />
             </div>
-            <div style={{ marginTop: 32 }}><SectionTitle title="Desempenho de Conteúdo." mobile={mobile} /></div>
+            <div style={{ position: 'relative', zIndex: 10, marginTop: 420 }}><SectionTitle title="Desempenho de Conteúdo." mobile={mobile} /></div>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16, minHeight: 0 }}>
               {/* Top 3 */}
               <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(0, 'highlight'), flexShrink: 0, padding: '30px 24px' }}>

@@ -48,10 +48,14 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
         {mobile ? (
           // ── MOBILE ───────────────────────────────────────────────────────────
           <>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: MOBILE_IMG_H, flexShrink: 0 }}>
-              <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56.jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
+            {/* Absolute Top Image with Base Fade */}
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: 860, zIndex: 0, pointerEvents: 'none' }}>
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', justifyContent: 'center', paddingTop: 80 }}>
+                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56.jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
+              </div>
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, #070D14 100%)', zIndex: 3 }} />
             </div>
-            <div style={{ marginTop: 32 }}><SectionTitle title="Expansão e Fidelização." mobile={mobile} /></div>
+            <div style={{ position: 'relative', zIndex: 10, marginTop: 420 }}><SectionTitle title="Expansão e Fidelização." mobile={mobile} /></div>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16, minHeight: 0 }}>
               {/* Reels */}
               <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...card(0, 'h'), flex: 1, padding: '30px 24px', display: 'flex', flexDirection: 'column', minHeight: 0 }}>

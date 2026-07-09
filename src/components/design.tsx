@@ -16,7 +16,7 @@ export function useIsMobile() {
 export const SLIDE_PAD        = { padding: '130px 100px 72px' } as const;
 export const SLIDE_PAD_MOBILE = { padding: '130px 70px 80px'  } as const;
 
-// Mobile image sizes (Perfect iPhone 16:9 ratio to prevent cropping with cover)
+// Mobile image sizes (Portrait screenshot size for background fade layout)
 export const MOBILE_IMG_W = 440;
 export const MOBILE_IMG_H = 780;
 

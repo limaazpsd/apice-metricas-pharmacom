@@ -14,7 +14,7 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
   useEffect(() => { const t = setTimeout(() => setShow(true), 60); return () => clearTimeout(t); }, []);
 
   const W = mobile ? 1080 : 1920;
-  const H = mobile ? 1440 : 1080;
+  const H = mobile ? 1900 : 1080;
 
   const cardStyle = (i: number, variant: 'default' | 'highlight' = 'default') => {
     const isH = hovered === i;
@@ -36,11 +36,15 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
         {mobile ? (
           // ── MOBILE ───────────────────────────────────────────────────────────
           <>
-            {/* Image top center */}
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: MOBILE_IMG_H, flexShrink: 0 }}>
-              <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56 (1).jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
+            {/* Absolute Top Image with Base Fade */}
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: 860, zIndex: 0, pointerEvents: 'none' }}>
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', justifyContent: 'center', paddingTop: 80 }}>
+                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56 (1).jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
+              </div>
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, #070D14 100%)', zIndex: 3 }} />
             </div>
-            <div style={{ marginTop: 32 }}><SectionTitle title="Público e Atividade." mobile={mobile} /></div>
+            {/* Title */}
+            <div style={{ position: 'relative', zIndex: 10, marginTop: 420 }}><SectionTitle title="Público e Atividade." mobile={mobile} /></div>
             {/* Cards */}
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16, minHeight: 0 }}>
               {/* Row: Gênero + Localização */}
@@ -61,14 +65,14 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
                   <p style={{ color: 'white', fontSize: 54, fontWeight: 900, lineHeight: 1.1, marginTop: 8, margin: 0 }}>96,3% <span style={{ fontSize: 20, fontWeight: 500, color: '#64748b' }}>Brasil</span></p>
                 </div>
               </div>
-              {/* Horários (fills rest) */}
+              {/* Horários (Centralized design) */}
               <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), flex: 1, padding: '30px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 0 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
                   <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)" mobile={mobile}><Clock size={18} /></IconBadge>
-                  <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', textAlign: 'center' }}>Picos de visualização da página</span>
+                  <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Picos de visualização da página</span>
                 </div>
                 <div style={{ display: 'flex', gap: 16 }}>
-                  {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 28, fontWeight: 800, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 12, padding: '14px 28px' }}>{h}</span>)}
+                  {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 26, fontWeight: 800, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 12, padding: '12px 24px' }}>{h}</span>)}
                 </div>
               </div>
             </div>
@@ -96,13 +100,17 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
                     <p style={{ color: 'white', fontSize: 48, fontWeight: 900, lineHeight: 1.1, marginTop: 10 }}>96,3% <span style={{ fontSize: 17, fontWeight: 500, color: '#64748b' }}>Brasil</span></p>
                   </div>
                 </div>
-                <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), flex: 1, padding: '26px 30px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
+                <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), flex: 1, padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
                     <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Clock size={20} /></IconBadge>
-                    <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', textAlign: 'center' }}>Picos de visualização da página</span>
+                    <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Horários de Pico</span>
                   </div>
-                  <div style={{ display: 'flex', gap: 14 }}>
-                    {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 22, fontWeight: 800, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 12, padding: '10px 24px' }}>{h}</span>)}
+                  <p style={{ color: 'white', fontSize: 20, lineHeight: 1.55, marginBottom: 20 }}>A audiência se mantém altamente ativa das <strong style={{ color: '#60a5fa' }}>09h às 21h</strong>.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: 12, padding: '16px 20px' }}>
+                    <span style={{ color: 'white', fontSize: 16, fontWeight: 600 }}>Picos de audiência online:</span>
+                    <div style={{ display: 'flex', gap: 10 }}>
+                      {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 20, fontWeight: 700, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 10, padding: '8px 18px' }}>{h}</span>)}
+                    </div>
                   </div>
                 </div>
               </div>
