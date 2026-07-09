@@ -92,45 +92,45 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
             {/* Split layout: Content LEFT, Images RIGHT - vertically centered */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '100%' }}>
               {/* Left: Title + Cards column - max width, auto height */}
-              <div style={{ maxWidth: 800, display: 'flex', flexDirection: 'column', gap: 28, flex: 1 }}>
+              <div style={{ maxWidth: 700, display: 'flex', flexDirection: 'column', gap: 20, flex: 1 }}>
                 <SectionTitle title="Desempenho de Conteúdo." />
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                  <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(0, 'highlight'), flex: '0 0 auto', padding: '24px 28px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
-                      <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Trophy size={20} /></IconBadge>
-                      <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Top 3 Posts (Views)</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(0, 'highlight'), flex: '0 0 auto', padding: '18px 22px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+                      <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Trophy size={18} /></IconBadge>
+                      <span style={{ color: '#94a3b8', fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Top 3 Posts (Views)</span>
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                       {top3.map(p => (
-                        <div key={p.rank} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: 10, padding: '12px 16px' }}>
-                          <span style={{ color: 'white', fontWeight: 500, fontSize: 17 }}>{p.rank}. {p.title}</span>
-                          <span style={{ color: p.color, fontWeight: 900, fontSize: 30 }}>{p.views}</span>
+                        <div key={p.rank} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: 8, padding: '10px 14px' }}>
+                          <span style={{ color: 'white', fontWeight: 500, fontSize: 15 }}>{p.rank}. {p.title}</span>
+                          <span style={{ color: p.color, fontWeight: 900, fontSize: 26 }}>{p.views}</span>
                         </div>
                       ))}
                     </div>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-                    <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(1), padding: '24px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                        <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)"><LayoutGrid size={20} /></IconBadge>
-                        <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Foco de Entrega</span>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+                    <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(1), padding: '18px 22px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                        <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)"><LayoutGrid size={18} /></IconBadge>
+                        <span style={{ color: '#94a3b8', fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Foco de Entrega</span>
                       </div>
-                      <p style={{ color: 'white', fontSize: 17, lineHeight: 1.6 }}>Posts no Feed dominam com <strong style={{ color: '#60a5fa', fontSize: 26 }}>92,4%</strong> das visualizações.</p>
+                      <p style={{ color: 'white', fontSize: 15, lineHeight: 1.5 }}>Posts no Feed dominam com <strong style={{ color: '#60a5fa', fontSize: 22 }}>92,4%</strong> das visualizações.</p>
                     </div>
-                    <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(2, 'red'), padding: '24px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                        <IconBadge color="#f87171" bg="rgba(239,68,68,0.22)"><AlertTriangle size={20} /></IconBadge>
-                        <span style={{ color: '#f87171', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Atenção Crítica</span>
+                    <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(2, 'red'), padding: '18px 22px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                        <IconBadge color="#f87171" bg="rgba(239,68,68,0.22)"><AlertTriangle size={18} /></IconBadge>
+                        <span style={{ color: '#f87171', fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Atenção Crítica</span>
                       </div>
-                      <p style={{ color: 'white', fontSize: 17, lineHeight: 1.6 }}><strong style={{ color: '#f87171', fontSize: 26 }}>98,5%</strong> das views vêm de quem <strong>já segue</strong>. Alcance externo é ínfimo (1,5%).</p>
+                      <p style={{ color: 'white', fontSize: 15, lineHeight: 1.5 }}><strong style={{ color: '#f87171', fontSize: 22 }}>98,5%</strong> das views vêm de quem <strong>já segue</strong>. Alcance externo é ínfimo (1,5%).</p>
                     </div>
                   </div>
                 </div>
               </div>
               {/* Right: images - fixed width, VERTICALLY CENTERED, side by side */}
-              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 480, flexShrink: 0, gap: 20, marginLeft: 60 }}>
-                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57 (2).jpeg" alt="" style={{ width: Math.round(IMG_W * 0.82), height: Math.round(IMG_H * 0.82), objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, transform: 'rotate(-5deg)', transformOrigin: 'center center', zIndex: 1, flexShrink: 0 }} />
-                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58 (1).jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 420, flexShrink: 0, gap: 16, marginLeft: 40 }}>
+                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57 (2).jpeg" alt="" style={{ width: Math.round(IMG_W * 0.75), height: Math.round(IMG_H * 0.75), objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, transform: 'rotate(-5deg)', transformOrigin: 'center center', zIndex: 1, flexShrink: 0 }} />
+                <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58 (1).jpeg" alt="" style={{ width: Math.round(IMG_W * 0.9), height: Math.round(IMG_H * 0.9), objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
               </div>
             </div>
           </>
