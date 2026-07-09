@@ -67,7 +67,7 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
                     <p style={{ color: 'white', fontSize: 54, fontWeight: 900, lineHeight: 1.1, marginTop: 8, margin: 0 }}>96,3% <span style={{ fontSize: 20, fontWeight: 500, color: '#64748b' }}>Brasil</span></p>
                   </div>
                 </div>
-                {/* Horários - no flex:1, just auto height */}
+                {/* Horários (Centralized design) - no flex:1, just auto height */}
                 <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), padding: '30px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
                     <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)" mobile={mobile}><Clock size={18} /></IconBadge>
@@ -83,43 +83,46 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
         ) : (
           // ── DESKTOP ──────────────────────────────────────────────────────────
           <>
-<SectionTitle title="Público e Atividade." />
-            {/* Centered row: cards left (fixed width), image right */}
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', gap: 48, width: '100%', paddingTop: 20 }}>
-              <div style={{ width: 750, display: 'flex', flexDirection: 'column', gap: 20 }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, flex: '0 0 auto' }}>
-                  <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(0), padding: '26px 28px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
-                      <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)"><Users size={20} /></IconBadge>
-                      <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Gênero</span>
+            {/* Split layout: Content LEFT, Image RIGHT */}
+            <div style={{ display: 'flex', width: '100%', paddingTop: 20, paddingLeft: 120 }}>
+              {/* Left: Title + Cards column */}
+              <div style={{ width: 750, display: 'flex', flexDirection: 'column', gap: 28 }}>
+                <SectionTitle title="Público e Atividade." />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, flex: '0 0 auto' }}>
+                    <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(0), padding: '26px 28px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
+                        <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)"><Users size={20} /></IconBadge>
+                        <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Gênero</span>
+                      </div>
+                      <p style={{ color: 'white', fontSize: 38, fontWeight: 900, lineHeight: 1.2, marginBottom: 6 }}>58,9% <span style={{ fontSize: 17, fontWeight: 500, color: '#64748b' }}>Homens</span></p>
+                      <p style={{ color: 'white', fontSize: 38, fontWeight: 900, lineHeight: 1.2 }}>41,1% <span style={{ fontSize: 17, fontWeight: 500, color: '#64748b' }}>Mulheres</span></p>
                     </div>
-                    <p style={{ color: 'white', fontSize: 38, fontWeight: 900, lineHeight: 1.2, marginBottom: 6 }}>58,9% <span style={{ fontSize: 17, fontWeight: 500, color: '#64748b' }}>Homens</span></p>
-                    <p style={{ color: 'white', fontSize: 38, fontWeight: 900, lineHeight: 1.2 }}>41,1% <span style={{ fontSize: 17, fontWeight: 500, color: '#64748b' }}>Mulheres</span></p>
-                  </div>
-                  <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(1), padding: '26px 28px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
-                      <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)"><MapPin size={20} /></IconBadge>
-                      <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Localização</span>
+                    <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(1), padding: '26px 28px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
+                        <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)"><MapPin size={20} /></IconBadge>
+                        <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Localização</span>
+                      </div>
+                      <p style={{ color: 'white', fontSize: 48, fontWeight: 900, lineHeight: 1.1, marginTop: 10 }}>96,3% <span style={{ fontSize: 17, fontWeight: 500, color: '#64748b' }}>Brasil</span></p>
                     </div>
-                    <p style={{ color: 'white', fontSize: 48, fontWeight: 900, lineHeight: 1.1, marginTop: 10 }}>96,3% <span style={{ fontSize: 17, fontWeight: 500, color: '#64748b' }}>Brasil</span></p>
                   </div>
-                </div>
-                <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                    <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Clock size={20} /></IconBadge>
-                    <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Horários de Pico</span>
-                  </div>
-                  <p style={{ color: 'white', fontSize: 20, lineHeight: 1.55, marginBottom: 20 }}>A audiência se mantém altamente ativa das <strong style={{ color: '#60a5fa' }}>09h às 21h</strong>.</p>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: 12, padding: '16px 20px' }}>
-                    <span style={{ color: 'white', fontSize: 16, fontWeight: 600 }}>Picos de audiência online:</span>
-                    <div style={{ display: 'flex', gap: 10 }}>
-                      {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 20, fontWeight: 700, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 10, padding: '8px 18px' }}>{h}</span>)}
+                  <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
+                      <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Clock size={20} /></IconBadge>
+                      <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Horários de Pico</span>
+                    </div>
+                    <p style={{ color: 'white', fontSize: 20, lineHeight: 1.55, marginBottom: 20 }}>A audiência se mantém altamente ativa das <strong style={{ color: '#60a5fa' }}>09h às 21h</strong>.</p>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: 12, padding: '16px 20px' }}>
+                      <span style={{ color: 'white', fontSize: 16, fontWeight: 600 }}>Picos de audiência online:</span>
+                      <div style={{ display: 'flex', gap: 10 }}>
+                        {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 20, fontWeight: 700, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 10, padding: '8px 18px' }}>{h}</span>)}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              {/* Right: image - top aligned, centered horizontally */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
+              {/* Right: image - top aligned */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', width: 450, marginLeft: 80 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56 (1).jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
               </div>
             </div>

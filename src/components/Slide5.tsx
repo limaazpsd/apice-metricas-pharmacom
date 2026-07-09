@@ -93,38 +93,42 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
         ) : (
           // ── DESKTOP ──────────────────────────────────────────────────────────
           <>
-            <SectionTitle title="Expansão e Fidelização." />
-            {/* Row centered horizontally */}
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', gap: 48, width: '100%', paddingTop: 20 }}>
-              {/* Left: cards column - fixed width, auto height */}
-              <div style={{ width: 750, display: 'flex', flexDirection: 'column', gap: 20 }}>
-                <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...card(0, 'h'), padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-                    <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Video size={20} /></IconBadge>
-                    <h3 style={{ color: 'white', fontWeight: 700, fontSize: 22, margin: 0 }}>A Importância dos Reels</h3>
+            {/* Split layout: Content LEFT, Image RIGHT */}
+            <div style={{ display: 'flex', width: '100%', paddingTop: 20, paddingLeft: 120 }}>
+              {/* Left: Title + Cards column - fixed width, auto height */}
+              <div style={{ width: 750, display: 'flex', flexDirection: 'column', gap: 28 }}>
+                <SectionTitle title="Expansão e Fidelização." />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                  {/* Reels - auto height, no flex:1 */}
+                  <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...card(0, 'h'), padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
+                      <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Video size={20} /></IconBadge>
+                      <h3 style={{ color: 'white', fontWeight: 700, fontSize: 22, margin: 0 }}>A Importância dos Reels</h3>
+                    </div>
+                    <p style={{ color: '#94a3b8', fontSize: 17, lineHeight: 1.6, marginBottom: 16 }}>Atualmente, os Reels representam apenas <strong style={{ color: 'white' }}>0,9%</strong> das views. Isso é um gargalo de crescimento.</p>
+                    <ul style={{ display: 'flex', flexDirection: 'column', gap: 10, listStyle: 'none', padding: 0, margin: 0 }}>
+                      <BulletItem icon="▹" color="#60a5fa" text='Instagram usa Reels para atingir <strong style="color:white">não-seguidores</strong>.' />
+                      <BulletItem icon="▹" color="#60a5fa" text='Forma mais barata de reverter a perda de seguidores.' />
+                      <BulletItem icon="▹" color="#60a5fa" text='Temas "blockbuster" precisam virar vídeos curtos.' />
+                    </ul>
                   </div>
-                  <p style={{ color: '#94a3b8', fontSize: 17, lineHeight: 1.6, marginBottom: 16 }}>Atualmente, os Reels representam apenas <strong style={{ color: 'white' }}>0,9%</strong> das views. Isso é um gargalo de crescimento.</p>
-                  <ul style={{ display: 'flex', flexDirection: 'column', gap: 10, listStyle: 'none', padding: 0, margin: 0 }}>
-                    <BulletItem icon="▹" color="#60a5fa" text='Instagram usa Reels para atingir <strong style="color:white">não-seguidores</strong>.' />
-                    <BulletItem icon="▹" color="#60a5fa" text='Forma mais barata de reverter a perda de seguidores.' />
-                    <BulletItem icon="▹" color="#60a5fa" text='Temas "blockbuster" precisam virar vídeos curtos.' />
-                  </ul>
-                </div>
-                <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...card(1, 'y'), padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-                    <IconBadge color="#facc15" bg="rgba(234,179,8,0.2)"><HeartHandshake size={20} /></IconBadge>
-                    <h3 style={{ color: 'white', fontWeight: 700, fontSize: 22, margin: 0 }}>Retenção e Stories</h3>
+                  {/* Stories - auto height, no flex:1 */}
+                  <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...card(1, 'y'), padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
+                      <IconBadge color="#facc15" bg="rgba(234,179,8,0.2)"><HeartHandshake size={20} /></IconBadge>
+                      <h3 style={{ color: 'white', fontWeight: 700, fontSize: 22, margin: 0 }}>Retenção e Stories</h3>
+                    </div>
+                    <p style={{ color: '#94a3b8', fontSize: 17, lineHeight: 1.6, marginBottom: 16 }}>A perda de (3.651) seguidores mostra falta de conexão. Stories (<strong style={{ color: 'white' }}>6,7%</strong>) devem focar na retenção.</p>
+                    <ul style={{ display: 'flex', flexDirection: 'column', gap: 10, listStyle: 'none', padding: 0, margin: 0 }}>
+                      <BulletItem icon="▹" color="#facc15" text='Stories servem para <strong style="color:white">fidelizar</strong> fãs, não atrair.' />
+                      <BulletItem icon="▹" color="#facc15" text='Focar em bastidores e enquetes diárias.' />
+                      <BulletItem icon="▹" color="#facc15" text='Sem retenção, o perfil é um <strong style="color:white">"balde furado"</strong>.' />
+                    </ul>
                   </div>
-                  <p style={{ color: '#94a3b8', fontSize: 17, lineHeight: 1.6, marginBottom: 16 }}>A perda de (3.651) seguidores mostra falta de conexão. Stories (<strong style={{ color: 'white' }}>6,7%</strong>) devem focar na retenção.</p>
-                  <ul style={{ display: 'flex', flexDirection: 'column', gap: 10, listStyle: 'none', padding: 0, margin: 0 }}>
-                    <BulletItem icon="▹" color="#facc15" text='Stories servem para <strong style="color:white">fidelizar</strong> fãs, não atrair.' />
-                    <BulletItem icon="▹" color="#facc15" text='Focar em bastidores e enquetes diárias.' />
-                    <BulletItem icon="▹" color="#facc15" text='Sem retenção, o perfil é um <strong style="color:white">"balde furado"</strong>.' />
-                  </ul>
                 </div>
               </div>
               {/* Right: image - fixed width, top aligned */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', width: 450 }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', width: 450, marginLeft: 80 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56.jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
               </div>
             </div>
