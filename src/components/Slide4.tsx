@@ -89,10 +89,10 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
         ) : (
           // ── DESKTOP ──────────────────────────────────────────────────────────
           <>
-            {/* Split layout: Content LEFT, Images RIGHT */}
-            <div style={{ display: 'flex', width: '100%', paddingTop: 20, paddingLeft: 120 }}>
-              {/* Left: Title + Cards column - fixed width, auto height */}
-              <div style={{ width: 780, display: 'flex', flexDirection: 'column', gap: 28 }}>
+            {/* Split layout: Content LEFT (with generous left margin), Images RIGHT */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%', paddingTop: 20, paddingLeft: 180, paddingRight: 180 }}>
+              {/* Left: Title + Cards column - auto height, max width */}
+              <div style={{ maxWidth: 800, display: 'flex', flexDirection: 'column', gap: 28, flex: 1 }}>
                 <SectionTitle title="Desempenho de Conteúdo." />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                   <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(0, 'highlight'), flex: '0 0 auto', padding: '24px 28px' }}>
@@ -128,7 +128,7 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
                 </div>
               </div>
               {/* Right: images - fixed width, top aligned */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', width: 450, marginLeft: 80 }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', width: 480, flexShrink: 0, marginLeft: 60 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57 (2).jpeg" alt="" style={{ width: Math.round(IMG_W * 0.82), height: Math.round(IMG_H * 0.82), objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -70, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58 (1).jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
               </div>
