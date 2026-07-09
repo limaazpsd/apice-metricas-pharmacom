@@ -83,7 +83,7 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
         ) : (
           // ── DESKTOP ──────────────────────────────────────────────────────────
           <>
-            <SectionTitle title="Público e Atividade." />
+<SectionTitle title="Público e Atividade." />
             {/* Centered row: cards left (fixed width), image right */}
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', gap: 48, width: '100%', paddingTop: 20 }}>
               <div style={{ width: 750, display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -118,7 +118,8 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
                   </div>
                 </div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {/* Right: image - top aligned, centered horizontally */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56 (1).jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
               </div>
             </div>

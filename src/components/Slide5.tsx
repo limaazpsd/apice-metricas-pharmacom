@@ -123,8 +123,8 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
                   </ul>
                 </div>
               </div>
-              {/* Right: image - fixed width, centered */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 450 }}>
+              {/* Right: image - fixed width, top aligned */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', width: 450 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56.jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
               </div>
             </div>

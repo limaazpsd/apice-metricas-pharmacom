@@ -102,8 +102,8 @@ export function Slide2({ mobile }: { mobile?: boolean }) {
               <div style={{ width: 750, display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'auto auto', gap: 20 }}>
                 {cards.map((c, i) => <MetricCard key={i} index={i} hovered={hovered} setHovered={setHovered} {...c} />)}
               </div>
-              {/* Right: images - fixed width, centered vertically with cards */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 450 }}>
+              {/* Right: images - fixed width, TOP aligned (not vertical center) */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', width: 450 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57.jpeg" alt="" style={{ width: Math.round(IMG_W * 0.82), height: Math.round(IMG_H * 0.82), objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -70, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58.jpeg" alt="" style={{ width: IMG_W, height: IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
               </div>
