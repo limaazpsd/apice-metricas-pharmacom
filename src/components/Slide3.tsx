@@ -29,7 +29,7 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
   };
 
   return (
-    <div className="relative overflow-hidden" style={{ width: W, height: H, background: '#070D14', fontFamily: "'Sora', sans-serif", backgroundImage: SLIDE_BG_RIGHT }}>
+    <div className={`relative ${mobile ? 'overflow-y-auto overflow-x-hidden' : 'overflow-hidden'}`} style={{ width: W, height: H, background: '#070D14', fontFamily: "'Sora', sans-serif", backgroundImage: SLIDE_BG_RIGHT }}>
       <div className="absolute inset-0 pointer-events-none" style={GRID_CSS} />
 
       <div className={`relative z-10 w-full h-full flex flex-col transition-all duration-700 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={mobile ? SLIDE_PAD_MOBILE : SLIDE_PAD}>

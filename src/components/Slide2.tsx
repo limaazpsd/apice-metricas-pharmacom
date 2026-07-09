@@ -57,11 +57,11 @@ export function Slide2({ mobile }: { mobile?: boolean }) {
   useEffect(() => { const t = setTimeout(() => setShow(true), 60); return () => clearTimeout(t); }, []);
 
   const W = mobile ? 1080 : 1920;
-  const H = mobile ? 1440 : 1080;
+  const H = mobile ? 1900 : 1080;
 
   return (
     <div
-      className={`relative overflow-hidden`}
+      className={`relative ${mobile ? 'overflow-y-auto overflow-x-hidden' : 'overflow-hidden'}`}
       style={{ width: W, height: H, background: '#070D14', fontFamily: "'Sora', sans-serif", backgroundImage: SLIDE_BG_LEFT }}
     >
       <div className="absolute inset-0 pointer-events-none" style={GRID_CSS} />
