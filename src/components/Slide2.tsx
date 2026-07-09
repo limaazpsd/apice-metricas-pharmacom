@@ -57,7 +57,7 @@ export function Slide2({ mobile }: { mobile?: boolean }) {
   useEffect(() => { const t = setTimeout(() => setShow(true), 60); return () => clearTimeout(t); }, []);
 
   const W = mobile ? 1080 : 1920;
-  const H = mobile ? 1440 : 1080;
+  const H = mobile ? 1800 : 1080;
 
   return (
     <div
@@ -68,24 +68,28 @@ export function Slide2({ mobile }: { mobile?: boolean }) {
 
       <div
         className={`relative z-10 w-full h-full flex flex-col transition-all duration-700 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-        style={mobile ? SLIDE_PAD_MOBILE : SLIDE_PAD}
+        style={mobile ? { ...SLIDE_PAD_MOBILE, justifyContent: 'flex-end' } : SLIDE_PAD}
       >
         {mobile ? (
           // ── MOBILE LAYOUT ────────────────────────────────────────────────────
           <>
-            {/* Absolute Top Image with Base Fade */}
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: 860, zIndex: 0, pointerEvents: 'none' }}>
-              <div style={{ position: 'absolute', inset: 0, display: 'flex', justifyContent: 'center', paddingTop: 80 }}>
+            {/* Absolute Top Image with padding from header, extended fade */}
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: 950, zIndex: 0, pointerEvents: 'none' }}>
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', justifyContent: 'center', paddingTop: 50 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57.jpeg" alt="" style={{ width: Math.round(MOBILE_IMG_W * 0.82), height: Math.round(MOBILE_IMG_H * 0.82), objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -50, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58.jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
               </div>
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, #070D14 100%)', zIndex: 3 }} />
+              {/* Fade: transparent until ~50% (475px), solid to bottom (950px) - covers written content area */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, #070D14 90%, #070D14 100%)', zIndex: 3 }} />
             </div>
-            {/* Title (pushed down) */}
-            <div style={{ position: 'relative', zIndex: 10, marginTop: 420 }}><SectionTitle title="Visão Geral do Perfil." mobile={mobile} /></div>
-            {/* 2×2 grid */}
-            <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: 18, minHeight: 0 }}>
-              {cards.map((c, i) => <MetricCard key={i} index={i} hovered={hovered} setHovered={setHovered} mobile={mobile} {...c} />)}
+            
+            {/* Written Content Group - pushed to bottom of content area, with footer padding */}
+            <div style={{ position: 'relative', zIndex: 10, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 28, paddingBottom: 40 }}>
+              <SectionTitle title="Visão Geral do Perfil." mobile={mobile} />
+              {/* 2×2 grid - auto rows */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'auto auto', gap: 20, width: '100%' }}>
+                {cards.map((c, i) => <MetricCard key={i} index={i} hovered={hovered} setHovered={setHovered} mobile={mobile} {...c} />)}
+              </div>
             </div>
           </>
         ) : (

@@ -8,7 +8,7 @@ import { Slide5 } from './components/Slide5';
 import { Slide6 } from './components/Slide6';
 
 const DESKTOP = { W: 1920, H: 1080 };
-const MOBILE  = { W: 1080, H: 1440 };
+const MOBILE  = { W: 1080, H: 1800 };
 
 const slides = [
   { component: Slide1, num: '01', title: 'INTRODUÇÃO' },
@@ -102,14 +102,15 @@ export default function App() {
           <div style={{ width: W, height: H, transform: `scale(${scale})`, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }}>
 
             {/* HEADER FADE */}
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: isMobile ? 240 : 160, background: 'linear-gradient(to bottom, rgba(7,13,20,1) 0%, rgba(7,13,20,0.95) 50%, rgba(7,13,20,0) 100%)', zIndex: 499, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: isMobile ? 200 : 160, background: 'linear-gradient(to bottom, rgba(7,13,20,1) 0%, rgba(7,13,20,0.95) 55%, rgba(7,13,20,0) 100%)', zIndex: 499, pointerEvents: 'none' }} />
 
-            {/* HEADER */}
+            {/* HEADER — pinned to very top of canvas */}
             <div
               style={{
                 position: 'absolute', top: 0, left: 0, right: 0,
                 zIndex: 500,
-                padding: isMobile ? '40px 60px' : '24px 80px',
+                height: isMobile ? 110 : undefined,
+                padding: isMobile ? '0 60px' : '24px 80px',
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
               }}
             >
@@ -118,16 +119,16 @@ export default function App() {
                 <div style={{ width: 2, height: isMobile ? 48 : 24, background: 'rgba(255,255,255,0.2)' }} />
                 <span style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, fontSize: isMobile ? 26 : 14, letterSpacing: '0.22em' }}>{title}</span>
               </div>
-              <img src="/apice-digital.png" alt="Ápice" style={{ height: isMobile ? 80 : 34, objectFit: 'contain' }} />
+              <img src="/apice-digital.png" alt="Ápice" style={{ height: isMobile ? 72 : 34, objectFit: 'contain' }} />
             </div>
 
-            {/* FOOTER FADE */}
-            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: isMobile ? 240 : 140, background: 'linear-gradient(to top, rgba(7,13,20,1) 0%, rgba(7,13,20,0.95) 50%, rgba(7,13,20,0) 100%)', zIndex: 499, pointerEvents: 'none' }} />
+            {/* FOOTER FADE — pinned to bottom of canvas (height 1800) */}
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: isMobile ? 220 : 140, background: 'linear-gradient(to top, rgba(7,13,20,1) 0%, rgba(7,13,20,0.95) 55%, rgba(7,13,20,0) 100%)', zIndex: 499, pointerEvents: 'none' }} />
 
-            {/* FOOTER */}
-            <div style={{ position: 'absolute', bottom: isMobile ? 50 : 24, left: '50%', transform: 'translateX(-50%)', zIndex: 500, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: isMobile ? 24 : 12, pointerEvents: 'auto' }}>
+            {/* FOOTER — pinned to bottom of canvas */}
+            <div style={{ position: 'absolute', bottom: isMobile ? 30 : 24, left: '50%', transform: 'translateX(-50%)', zIndex: 500, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: isMobile ? 20 : 12, pointerEvents: 'auto' }}>
               {/* Progress segments */}
-              <div style={{ display: 'flex', gap: isMobile ? 12 : 8, width: isMobile ? 640 : 420 }}>
+              <div style={{ display: 'flex', gap: isMobile ? 12 : 8, width: isMobile ? 700 : 420 }}>
                 {slides.map((s, i) => (
                   <button
                     key={i}
@@ -153,24 +154,24 @@ export default function App() {
                 backdropFilter: 'blur(16px)',
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: 999,
-                padding: isMobile ? '16px 40px' : '12px 30px',
-                display: 'flex', alignItems: 'center', gap: isMobile ? 48 : 32,
+                padding: isMobile ? '18px 48px' : '12px 30px',
+                display: 'flex', alignItems: 'center', gap: isMobile ? 52 : 32,
               }}>
                 <button
                   onClick={prev} disabled={current === 0}
                   style={{ background: 'none', border: 'none', cursor: current === 0 ? 'default' : 'pointer', color: current === 0 ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.75)', display: 'flex', alignItems: 'center', transition: 'color 0.2s', padding: '4px 6px' }}
                 >
-                  <ChevronLeft size={isMobile ? 32 : 22} />
+                  <ChevronLeft size={isMobile ? 36 : 22} />
                 </button>
                 <div style={{ textAlign: 'center', userSelect: 'none' }}>
-                  <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: isMobile ? 16 : 11, fontWeight: 700, letterSpacing: '0.2em', marginBottom: isMobile ? 6 : 2 }}>{title}</div>
-                  <div style={{ color: 'white', fontWeight: 700, fontSize: isMobile ? 28 : 18 }}>{current + 1} / {slides.length}</div>
+                  <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: isMobile ? 18 : 11, fontWeight: 700, letterSpacing: '0.2em', marginBottom: isMobile ? 6 : 2 }}>{title}</div>
+                  <div style={{ color: 'white', fontWeight: 700, fontSize: isMobile ? 32 : 18 }}>{current + 1} / {slides.length}</div>
                 </div>
                 <button
                   onClick={next} disabled={current === slides.length - 1}
                   style={{ background: 'none', border: 'none', cursor: current === slides.length - 1 ? 'default' : 'pointer', color: current === slides.length - 1 ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.75)', display: 'flex', alignItems: 'center', transition: 'color 0.2s', padding: '4px 6px' }}
                 >
-                  <ChevronRight size={isMobile ? 32 : 22} />
+                  <ChevronRight size={isMobile ? 36 : 22} />
                 </button>
               </div>
             </div>

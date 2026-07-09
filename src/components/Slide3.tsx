@@ -14,7 +14,7 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
   useEffect(() => { const t = setTimeout(() => setShow(true), 60); return () => clearTimeout(t); }, []);
 
   const W = mobile ? 1080 : 1920;
-  const H = mobile ? 1440 : 1080;
+  const H = mobile ? 1800 : 1080;
 
   const cardStyle = (i: number, variant: 'default' | 'highlight' = 'default') => {
     const isH = hovered === i;
@@ -32,47 +32,50 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
     <div className="relative overflow-hidden" style={{ width: W, height: H, background: '#070D14', fontFamily: "'Sora', sans-serif", backgroundImage: SLIDE_BG_RIGHT }}>
       <div className="absolute inset-0 pointer-events-none" style={GRID_CSS} />
 
-      <div className={`relative z-10 w-full h-full flex flex-col transition-all duration-700 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={mobile ? SLIDE_PAD_MOBILE : SLIDE_PAD}>
+      <div className={`relative z-10 w-full h-full flex flex-col transition-all duration-700 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={mobile ? { ...SLIDE_PAD_MOBILE, justifyContent: 'flex-end' } : SLIDE_PAD}>
         {mobile ? (
           // ── MOBILE ───────────────────────────────────────────────────────────
           <>
-            {/* Absolute Top Image with Base Fade */}
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: 860, zIndex: 0, pointerEvents: 'none' }}>
-              <div style={{ position: 'absolute', inset: 0, display: 'flex', justifyContent: 'center', paddingTop: 80 }}>
+            {/* Absolute Top Image with padding from header, extended fade */}
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: 950, zIndex: 0, pointerEvents: 'none' }}>
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', justifyContent: 'center', paddingTop: 50 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56 (1).jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
               </div>
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, #070D14 100%)', zIndex: 3 }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, #070D14 90%, #070D14 100%)', zIndex: 3 }} />
             </div>
-            {/* Title */}
-            <div style={{ position: 'relative', zIndex: 10, marginTop: 420 }}><SectionTitle title="Público e Atividade." mobile={mobile} /></div>
-            {/* Cards */}
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16, minHeight: 0 }}>
-              {/* Row: Gênero + Localização */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, flexShrink: 0 }}>
-                <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(0), padding: '30px 24px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-                    <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)" mobile={mobile}><Users size={18} /></IconBadge>
-                    <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Gênero</span>
+            
+            {/* Written Content Group - pushed to bottom, with footer padding */}
+            <div style={{ position: 'relative', zIndex: 10, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 28, paddingBottom: 40 }}>
+              <SectionTitle title="Público e Atividade." mobile={mobile} />
+              {/* Cards - flex column with auto height */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16, width: '100%' }}>
+                {/* Row: Gênero + Localização */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(0), padding: '30px 24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+                      <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)" mobile={mobile}><Users size={18} /></IconBadge>
+                      <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Gênero</span>
+                    </div>
+                    <p style={{ color: 'white', fontSize: 44, fontWeight: 900, lineHeight: 1.2, margin: 0, marginBottom: 4 }}>58,9% <span style={{ fontSize: 20, fontWeight: 500, color: '#64748b' }}>Homens</span></p>
+                    <p style={{ color: 'white', fontSize: 44, fontWeight: 900, lineHeight: 1.2, margin: 0 }}>41,1% <span style={{ fontSize: 20, fontWeight: 500, color: '#64748b' }}>Mulheres</span></p>
                   </div>
-                  <p style={{ color: 'white', fontSize: 44, fontWeight: 900, lineHeight: 1.2, margin: 0, marginBottom: 4 }}>58,9% <span style={{ fontSize: 20, fontWeight: 500, color: '#64748b' }}>Homens</span></p>
-                  <p style={{ color: 'white', fontSize: 44, fontWeight: 900, lineHeight: 1.2, margin: 0 }}>41,1% <span style={{ fontSize: 20, fontWeight: 500, color: '#64748b' }}>Mulheres</span></p>
-                </div>
-                <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(1), padding: '30px 24px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-                    <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)" mobile={mobile}><MapPin size={18} /></IconBadge>
-                    <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Localização</span>
+                  <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(1), padding: '30px 24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+                      <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)" mobile={mobile}><MapPin size={18} /></IconBadge>
+                      <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Localização</span>
+                    </div>
+                    <p style={{ color: 'white', fontSize: 54, fontWeight: 900, lineHeight: 1.1, marginTop: 8, margin: 0 }}>96,3% <span style={{ fontSize: 20, fontWeight: 500, color: '#64748b' }}>Brasil</span></p>
                   </div>
-                  <p style={{ color: 'white', fontSize: 54, fontWeight: 900, lineHeight: 1.1, marginTop: 8, margin: 0 }}>96,3% <span style={{ fontSize: 20, fontWeight: 500, color: '#64748b' }}>Brasil</span></p>
                 </div>
-              </div>
-              {/* Horários (Centralized design) */}
-              <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), flex: 1, padding: '30px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 0 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
-                  <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)" mobile={mobile}><Clock size={18} /></IconBadge>
-                  <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Picos de visualização da página</span>
-                </div>
-                <div style={{ display: 'flex', gap: 16 }}>
-                  {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 26, fontWeight: 800, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 12, padding: '12px 24px' }}>{h}</span>)}
+                {/* Horários - no flex:1, just auto height */}
+                <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), padding: '30px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
+                    <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)" mobile={mobile}><Clock size={18} /></IconBadge>
+                    <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Picos de visualização da página</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: 16 }}>
+                    {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 26, fontWeight: 800, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 12, padding: '12px 24px' }}>{h}</span>)}
+                  </div>
                 </div>
               </div>
             </div>

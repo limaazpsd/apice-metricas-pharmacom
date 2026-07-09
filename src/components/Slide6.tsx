@@ -12,7 +12,7 @@ export function Slide6({ mobile }: { mobile?: boolean }) {
   useEffect(() => { const t = setTimeout(() => setShow(true), 60); return () => clearTimeout(t); }, []);
 
   const W = mobile ? 1080 : 1920;
-  const H = mobile ? 1440 : 1080;
+  const H = mobile ? 1800 : 1080;
 
   const card = (i: number, variant: 'h' | 'g' | 'r') => {
     const isHov = hovered === i;
@@ -39,7 +39,7 @@ export function Slide6({ mobile }: { mobile?: boolean }) {
 
       <div
         className={`relative z-10 w-full h-full flex flex-col transition-all duration-700 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-        style={mobile ? SLIDE_PAD_MOBILE : SLIDE_PAD}
+        style={mobile ? { ...SLIDE_PAD_MOBILE, justifyContent: 'center' } : SLIDE_PAD}
       >
         <SectionTitle title="Próximos Passos." mobile={mobile} />
 
@@ -85,12 +85,12 @@ export function Slide6({ mobile }: { mobile?: boolean }) {
             </div>
           </div>
 
-          {/* RIGHT — full-height red challenge card */}
+          {/* RIGHT — challenge card - mobile: full width, auto height, not flex:1 */}
           <div
             onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)}
             style={{
               ...card(2, 'r'),
-              flex: mobile ? 1 : 'none', flexShrink: 0, width: mobile ? '100%' : 520,
+              flex: mobile ? 'none' : 'none', flexShrink: 0, width: mobile ? '100%' : 520,
               display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
               textAlign: 'center', padding: mobile ? '40px 32px' : '40px 44px',
             }}
