@@ -89,10 +89,10 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
 ) : (
           // ── DESKTOP ──────────────────────────────────────────────────────────
           <>
-            {/* Two containers centered in slide: LEFT content (left-aligned), RIGHT images (center-center) */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', paddingLeft: 120, paddingRight: 120, gap: 60 }}>
-              {/* LEFT CONTAINER: written content - left aligned */}
-              <div style={{ maxWidth: 720, display: 'flex', flexDirection: 'column', gap: 18, flex: 1, textAlign: 'left' }}>
+            {/* Two containers: LEFT content (left-aligned, positioned left), RIGHT images (side by side, center-center) */}
+            <div style={{ display: 'flex', alignItems: 'center', width: '100%', height: '100%', paddingLeft: 100, paddingRight: 100, gap: 80 }}>
+              {/* LEFT CONTAINER: written content - LEFT ALIGNED, positioned more to the left */}
+              <div style={{ maxWidth: 800, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 18, flex: 1, textAlign: 'left' }}>
                 <SectionTitle title="Desempenho de Conteúdo." />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                   <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(0, 'highlight'), flex: '0 0 auto', padding: '18px 22px' }}>
@@ -127,8 +127,8 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
                   </div>
                 </div>
               </div>
-              {/* RIGHT CONTAINER: images - center-center aligned */}
-              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 440, flexShrink: 0, gap: 16, marginLeft: 40 }}>
+              {/* RIGHT CONTAINER: images - SIDE BY SIDE, CENTER-CENTER ALIGNED */}
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 480, flexShrink: 0, gap: 20, marginLeft: 40 }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57 (2).jpeg" alt="" style={{ width: Math.round(IMG_W * 0.78), height: Math.round(IMG_H * 0.78), objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, transform: 'rotate(-5deg)', transformOrigin: 'center center', zIndex: 1, flexShrink: 0 }} />
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58 (1).jpeg" alt="" style={{ width: Math.round(IMG_W * 0.92), height: Math.round(IMG_H * 0.92), objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
               </div>

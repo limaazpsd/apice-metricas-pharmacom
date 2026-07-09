@@ -90,17 +90,17 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
               </div>
             </div>
           </>
-        ) : (
+) : (
           // ── DESKTOP ──────────────────────────────────────────────────────────
           <>
-            {/* Two containers centered in slide: LEFT content (left-aligned), RIGHT image (center-center) */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', paddingLeft: 120, paddingRight: 120, gap: 60 }}>
-              {/* LEFT CONTAINER: written content - left aligned */}
-              <div style={{ maxWidth: 720, display: 'flex', flexDirection: 'column', gap: 18, flex: 1, textAlign: 'left' }}>
+            {/* Two containers: LEFT content (left-aligned, positioned left), RIGHT image (center-center) */}
+            <div style={{ display: 'flex', alignItems: 'center', width: '100%', height: '100%', paddingLeft: 80, paddingRight: 80, gap: 80 }}>
+              {/* LEFT CONTAINER: written content - LEFT ALIGNED, positioned left */}
+              <div style={{ maxWidth: 780, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 18, flex: 1, textAlign: 'left' }}>
                 <SectionTitle title="Expansão e Fidelização." />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                  {/* Reels - proper size */}
-                  <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...card(0, 'h'), padding: '22px 26px', display: 'flex', flexDirection: 'column' }}>
+                  {/* Reels */}
+                  <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...card(0, 'h'), padding: '20px 24px', display: 'flex', flexDirection: 'column' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                       <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Video size={20} /></IconBadge>
                       <h3 style={{ color: 'white', fontWeight: 700, fontSize: 22, margin: 0 }}>A Importância dos Reels</h3>
@@ -112,8 +112,8 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
                       <BulletItem icon="▹" color="#60a5fa" text='Temas "blockbuster" precisam virar vídeos curtos.' />
                     </ul>
                   </div>
-                  {/* Stories - proper size */}
-                  <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...card(1, 'y'), padding: '22px 26px', display: 'flex', flexDirection: 'column' }}>
+                  {/* Stories */}
+                  <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...card(1, 'y'), padding: '20px 24px', display: 'flex', flexDirection: 'column' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                       <IconBadge color="#facc15" bg="rgba(234,179,8,0.2)"><HeartHandshake size={20} /></IconBadge>
                       <h3 style={{ color: 'white', fontWeight: 700, fontSize: 22, margin: 0 }}>Retenção e Stories</h3>
@@ -127,8 +127,8 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
                   </div>
                 </div>
               </div>
-              {/* RIGHT CONTAINER: image - center-center aligned */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 440, flexShrink: 0, marginLeft: 50 }}>
+              {/* RIGHT CONTAINER: image - CENTER-CENTER ALIGNED */}
+              <div style={{ width: 440, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56.jpeg" alt="" style={{ width: Math.round(IMG_W * 0.88), height: Math.round(IMG_H * 0.88), objectFit: 'cover', objectPosition: 'center', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
               </div>
             </div>
