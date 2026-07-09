@@ -1,6 +1,24 @@
+import { useState, useEffect } from 'react';
+
+// ── Layout detection ──────────────────────────────────────────────────────────
+export function useIsMobile() {
+  const [m, setM] = useState(() => window.innerWidth < window.innerHeight);
+  useEffect(() => {
+    const h = () => setM(window.innerWidth < window.innerHeight);
+    window.addEventListener('resize', h);
+    return () => window.removeEventListener('resize', h);
+  }, []);
+  return m;
+}
+
 // Shared design constants for all slides
 // Fixed App header is ~70px on screen. At scale 0.55, 130px slide-space → 71.5px screen — just clears the header.
-export const SLIDE_PAD = { padding: '130px 100px 72px' } as const;
+export const SLIDE_PAD        = { padding: '130px 100px 72px' } as const;
+export const SLIDE_PAD_MOBILE = { padding: '130px 70px 80px'  } as const;
+
+// Mobile image sizes (portrait canvas 1080×1440)
+export const MOBILE_IMG_W = 380;
+export const MOBILE_IMG_H = 520;
 
 // Card backgrounds
 export const BG_CARD   = 'rgba(10, 15, 35, 0.9)';

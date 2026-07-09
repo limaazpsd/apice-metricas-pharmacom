@@ -7,8 +7,8 @@ import { Slide4 } from './components/Slide4';
 import { Slide5 } from './components/Slide5';
 import { Slide6 } from './components/Slide6';
 
-const SLIDE_W = 1920;
-const SLIDE_H = 1080;
+const DESKTOP = { W: 1920, H: 1080 };
+const MOBILE  = { W: 1080, H: 1440 };
 
 const slides = [
   { component: Slide1, num: '01', title: 'INTRODUÇÃO' },
@@ -19,24 +19,26 @@ const slides = [
   { component: Slide6, num: '06', title: 'CONCLUSÃO' },
 ];
 
-function useScale() {
-  const [scale, setScale] = useState(
-    () => Math.min(window.innerWidth / SLIDE_W, window.innerHeight / SLIDE_H)
-  );
+function useLayout() {
+  const calc = () => {
+    const portrait = window.innerWidth < window.innerHeight;
+    const { W, H } = portrait ? MOBILE : DESKTOP;
+    return { W, H, isMobile: portrait, scale: Math.min(window.innerWidth / W, window.innerHeight / H) };
+  };
+  const [layout, setLayout] = useState(calc);
   useEffect(() => {
-    const onResize = () =>
-      setScale(Math.min(window.innerWidth / SLIDE_W, window.innerHeight / SLIDE_H));
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+    const h = () => setLayout(calc());
+    window.addEventListener('resize', h);
+    return () => window.removeEventListener('resize', h);
   }, []);
-  return scale;
+  return layout;
 }
 
 export default function App() {
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(true);
   const [hoveredSlide, setHoveredSlide] = useState<number | null>(null);
-  const scale = useScale();
+  const { W, H, scale, isMobile } = useLayout();
 
   const goTo = (index: number) => {
     if (index === current || index < 0 || index >= slides.length) return;
@@ -69,9 +71,9 @@ export default function App() {
     return () => { window.removeEventListener('touchstart', onTouchStart); window.removeEventListener('touchend', onTouchEnd); };
   }, [current]);
 
-  const Comp = slides[current].component;
-  const scaledW = SLIDE_W * scale;
-  const scaledH = SLIDE_H * scale;
+  const Comp = slides[current].component as React.ComponentType<{ mobile?: boolean }>;
+  const scaledW = W * scale;
+  const scaledH = H * scale;
   const { num, title } = slides[current];
   const navScale = Math.max(scale, 0.45);
 
@@ -107,8 +109,8 @@ export default function App() {
             transition: 'opacity 0.28s ease',
           }}
         >
-          <div style={{ width: SLIDE_W, height: SLIDE_H, transform: `scale(${scale})`, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }}>
-            <Comp />
+          <div style={{ width: W, height: H, transform: `scale(${scale})`, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }}>
+            <Comp mobile={isMobile} />
           </div>
         </div>
       </div>
