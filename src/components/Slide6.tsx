@@ -43,7 +43,7 @@ export function Slide6({ mobile }: { mobile?: boolean }) {
       >
         <SectionTitle title="Próximos Passos." mobile={mobile} />
 
-        <div style={{ display: 'flex', flexDirection: mobile ? 'column' : 'row', gap: mobile ? 20 : 48, flex: 1, minHeight: 0 }}>
+        <div style={{ display: 'flex', flexDirection: mobile ? 'column' : 'row', gap: mobile ? 20 : 48, flexShrink: 0 }}>
           {/* LEFT — acertos + plano */}
           <div style={{ flex: mobile ? 'none' : 1, display: 'flex', flexDirection: 'column', gap: 20 }}>
             {/* Acertos — green */}
