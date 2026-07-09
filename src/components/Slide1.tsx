@@ -56,7 +56,7 @@ export function Slide1({ mobile }: { mobile?: boolean }) {
   return (
     <div
       className="relative overflow-hidden"
-      style={{ width: W, height: H, background: '#070D14', fontFamily: "'Sora', sans-serif", backgroundImage: SLIDE_BG_RIGHT }}
+      style={{ width: W, height: H, background: '#070D14', fontFamily: "'Sora', sans-serif", backgroundImage: SLIDE_BG_LEFT }}
     >
       {/* Grid mesh */}
       <div className="absolute inset-0 pointer-events-none" style={GRID_CSS} />
