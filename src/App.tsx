@@ -8,7 +8,7 @@ import { Slide5 } from './components/Slide5';
 import { Slide6 } from './components/Slide6';
 
 const DESKTOP = { W: 1920, H: 1080 };
-const MOBILE  = { W: 1080, H: 1900 };
+const MOBILE  = { W: 1080, H: 1440 };
 
 const slides = [
   { component: Slide1, num: '01', title: 'INTRODUÇÃO' },
@@ -101,13 +101,15 @@ export default function App() {
         <div style={{ width: scaledW, height: scaledH, position: 'relative' }}>
           <div style={{ width: W, height: H, transform: `scale(${scale})`, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }}>
 
+            {/* HEADER FADE */}
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: isMobile ? 240 : 160, background: 'linear-gradient(to bottom, rgba(7,13,20,1) 0%, rgba(7,13,20,0.95) 50%, rgba(7,13,20,0) 100%)', zIndex: 499, pointerEvents: 'none' }} />
+
             {/* HEADER */}
             <div
               style={{
                 position: 'absolute', top: 0, left: 0, right: 0,
                 zIndex: 500,
                 padding: isMobile ? '40px 60px' : '24px 80px',
-                background: 'linear-gradient(to bottom, rgba(7,13,20,1) 0%, rgba(7,13,20,0.92) 70%, transparent 100%)',
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
               }}
             >
@@ -118,6 +120,9 @@ export default function App() {
               </div>
               <img src="/apice-digital.png" alt="Ápice" style={{ height: isMobile ? 80 : 34, objectFit: 'contain' }} />
             </div>
+
+            {/* FOOTER FADE */}
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: isMobile ? 240 : 140, background: 'linear-gradient(to top, rgba(7,13,20,1) 0%, rgba(7,13,20,0.95) 50%, rgba(7,13,20,0) 100%)', zIndex: 499, pointerEvents: 'none' }} />
 
             {/* FOOTER */}
             <div style={{ position: 'absolute', bottom: isMobile ? 50 : 24, left: '50%', transform: 'translateX(-50%)', zIndex: 500, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: isMobile ? 24 : 12, pointerEvents: 'auto' }}>
