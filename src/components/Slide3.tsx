@@ -37,7 +37,7 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
           // ── MOBILE ───────────────────────────────────────────────────────────
           <>
             {/* Image top center */}
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 540, flexShrink: 0 }}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 400, flexShrink: 0 }}>
               <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56 (1).jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
             </div>
             <div style={{ marginTop: 32 }}><SectionTitle title="Público e Atividade." mobile={mobile} /></div>

@@ -48,7 +48,7 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
         {mobile ? (
           // ── MOBILE ───────────────────────────────────────────────────────────
           <>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 540, flexShrink: 0 }}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 400, flexShrink: 0 }}>
               <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56.jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
             </div>
             <div style={{ marginTop: 32 }}><SectionTitle title="Expansão e Fidelização." mobile={mobile} /></div>

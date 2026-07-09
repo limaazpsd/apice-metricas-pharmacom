@@ -17,8 +17,8 @@ export const SLIDE_PAD        = { padding: '130px 100px 72px' } as const;
 export const SLIDE_PAD_MOBILE = { padding: '150px 70px 220px'  } as const;
 
 // Mobile image sizes (portrait canvas 1080×1440)
-export const MOBILE_IMG_W = 380;
-export const MOBILE_IMG_H = 520;
+export const MOBILE_IMG_W = 440;
+export const MOBILE_IMG_H = 400;
 
 // Card backgrounds
 export const BG_CARD   = 'rgba(10, 15, 35, 0.9)';

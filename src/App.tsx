@@ -112,11 +112,11 @@ export default function App() {
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 24 : 16 }}>
-                <span style={{ color: '#1d4ed8', fontWeight: 800, fontSize: isMobile ? 44 : 24, letterSpacing: 2 }}>{num}</span>
-                <div style={{ width: 1, height: isMobile ? 40 : 24, background: 'rgba(255,255,255,0.2)' }} />
-                <span style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, fontSize: isMobile ? 22 : 14, letterSpacing: '0.22em' }}>{title}</span>
+                <span style={{ color: '#1d4ed8', fontWeight: 800, fontSize: isMobile ? 54 : 24, letterSpacing: 2 }}>{num}</span>
+                <div style={{ width: 2, height: isMobile ? 48 : 24, background: 'rgba(255,255,255,0.2)' }} />
+                <span style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, fontSize: isMobile ? 26 : 14, letterSpacing: '0.22em' }}>{title}</span>
               </div>
-              <img src="/apice-digital.png" alt="Ápice" style={{ height: isMobile ? 48 : 34, objectFit: 'contain' }} />
+              <img src="/apice-digital.png" alt="Ápice" style={{ height: isMobile ? 80 : 34, objectFit: 'contain' }} />
             </div>
 
             {/* FOOTER */}

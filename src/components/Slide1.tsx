@@ -37,9 +37,9 @@ function StatCard({ icon, value, label, sub, mobile }: { icon: React.ReactNode; 
         {icon}
       </div>
       <div style={{ minWidth: 0 }}>
-        <p style={{ color: 'white', fontWeight: 800, fontSize: mobile ? 36 : 44, lineHeight: 1, margin: 0 }}>{value}</p>
-        <p style={{ color: '#64748b', fontWeight: 600, fontSize: mobile ? 12 : 14, margin: '5px 0 0', letterSpacing: '0.05em' }}>{label}</p>
-        {sub && <p style={{ color: '#34d399', fontWeight: 600, fontSize: mobile ? 11 : 13, margin: '3px 0 0' }}>{sub}</p>}
+        <p style={{ color: 'white', fontWeight: 800, fontSize: mobile ? 56 : 44, lineHeight: 1, margin: 0 }}>{value}</p>
+        <p style={{ color: '#64748b', fontWeight: 600, fontSize: mobile ? 20 : 14, margin: '8px 0 0', letterSpacing: '0.05em' }}>{label}</p>
+        {sub && <p style={{ color: '#34d399', fontWeight: 600, fontSize: mobile ? 18 : 13, margin: '5px 0 0' }}>{sub}</p>}
       </div>
     </div>
   );
@@ -76,13 +76,13 @@ export function Slide1({ mobile }: { mobile?: boolean }) {
         {/* Pill badge */}
         <div style={{
           display: 'inline-flex', alignItems: 'center', gap: 10,
-          padding: '9px 24px', borderRadius: 999,
+          padding: mobile ? '12px 30px' : '9px 24px', borderRadius: 999,
           background: 'rgba(29,78,216,0.1)',
           border: '1px solid rgba(37,99,235,0.3)',
-          marginBottom: mobile ? 24 : 36,
+          marginBottom: mobile ? 32 : 36,
         }}>
-          <span style={{ color: '#60a5fa', fontSize: 18, lineHeight: 1 }}>📊</span>
-          <span style={{ color: '#94a3b8', fontWeight: 700, fontSize: mobile ? 11 : 13, letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+          <span style={{ color: '#60a5fa', fontSize: mobile ? 28 : 18, lineHeight: 1 }}>📊</span>
+          <span style={{ color: '#94a3b8', fontWeight: 700, fontSize: mobile ? 20 : 13, letterSpacing: '0.18em', textTransform: 'uppercase' }}>
             Relatório de Performance · Instagram
           </span>
         </div>
@@ -91,13 +91,13 @@ export function Slide1({ mobile }: { mobile?: boolean }) {
         <h1 style={{
           fontFamily: "'Sora', sans-serif",
           fontWeight: 800,
-          fontSize: mobile ? 80 : 118,
+          fontSize: mobile ? 120 : 118,
           lineHeight: 0.9,
           letterSpacing: '-0.02em',
           textAlign: 'center',
           color: 'white',
           margin: 0,
-          marginBottom: mobile ? 16 : 22,
+          marginBottom: mobile ? 24 : 22,
         }}>
           Métricas<br />
           <span style={{ color: '#1d4ed8' }}>Pharmacom</span>
@@ -111,7 +111,7 @@ export function Slide1({ mobile }: { mobile?: boolean }) {
         <p style={{
           color: 'rgba(255,255,255,0.72)',
           fontWeight: 500,
-          fontSize: mobile ? 20 : 26,
+          fontSize: mobile ? 30 : 26,
           textAlign: 'center',
           letterSpacing: '-0.01em',
           margin: 0,
@@ -121,29 +121,29 @@ export function Slide1({ mobile }: { mobile?: boolean }) {
         </p>
 
         {/* Period */}
-        <p style={{ color: '#475569', fontSize: mobile ? 15 : 18, fontWeight: 500, margin: 0, marginBottom: mobile ? 40 : 60, textAlign: 'center' }}>
+        <p style={{ color: '#475569', fontSize: mobile ? 22 : 18, fontWeight: 500, margin: 0, marginBottom: mobile ? 60 : 60, textAlign: 'center' }}>
           Período analisado:{mobile ? <br /> : <span>&nbsp;</span>}
           <span style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>28 de Maio a 06 de Julho de 2025</span>
         </p>
 
         {/* ── 3 metric cards ── */}
-        <div style={{ display: 'flex', flexDirection: mobile ? 'column' : 'row', gap: mobile ? 16 : 20, width: '100%', maxWidth: mobile ? 600 : 'none' }}>
+        <div style={{ display: 'flex', flexDirection: mobile ? 'column' : 'row', gap: mobile ? 20 : 20, width: '100%', maxWidth: mobile ? 700 : 'none' }}>
           <StatCard
-            icon={<Eye size={mobile ? 20 : 24} />}
+            icon={<Eye size={mobile ? 32 : 24} />}
             value="34.306"
             label="VISUALIZAÇÕES TOTAIS"
             sub="98,5% público seguidor"
             mobile={mobile}
           />
           <StatCard
-            icon={<Users size={mobile ? 20 : 24} />}
+            icon={<Users size={mobile ? 32 : 24} />}
             value="7.051"
             label="ALCANCE TOTAL"
             sub="+100.628% vs período anterior"
             mobile={mobile}
           />
           <StatCard
-            icon={<Activity size={mobile ? 20 : 24} />}
+            icon={<Activity size={mobile ? 32 : 24} />}
             value="509"
             label="AÇÕES NO PERFIL"
             sub="+74,3% visitas ao perfil"

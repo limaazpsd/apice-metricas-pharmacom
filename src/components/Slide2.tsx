@@ -74,7 +74,7 @@ export function Slide2({ mobile }: { mobile?: boolean }) {
           // ── MOBILE LAYOUT ────────────────────────────────────────────────────
           <>
             {/* Image section — centered at top */}
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 540, flexShrink: 0 }}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 400, flexShrink: 0 }}>
               <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57.jpeg" alt="" style={{ width: Math.round(MOBILE_IMG_W * 0.82), height: Math.round(MOBILE_IMG_H * 0.82), objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -50, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
               <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58.jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
             </div>
