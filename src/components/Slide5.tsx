@@ -16,9 +16,9 @@ function BulletItem({ icon, text, color }: { icon: string; text: string; color: 
     </li>
   );
 }
-function BulletItemSm({ icon, text, color }: { icon: string; text: string; color: string }) {
+function BulletItemSm({ icon, text, color, mobile }: { icon: string; text: string; color: string; mobile?: boolean }) {
   return (
-    <li style={{ display: 'flex', gap: 8, alignItems: 'flex-start', color: '#94a3b8', fontSize: 13, lineHeight: 1.45 }}>
+    <li style={{ display: 'flex', gap: 8, alignItems: 'flex-start', color: '#94a3b8', fontSize: mobile ? 18 : 13, lineHeight: 1.45 }}>
       <span style={{ color, flexShrink: 0 }}>{icon}</span>
       <span dangerouslySetInnerHTML={{ __html: text }} />
     </li>
@@ -51,32 +51,32 @@ export function Slide5({ mobile }: { mobile?: boolean }) {
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 540, flexShrink: 0 }}>
               <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56.jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
             </div>
-            <div style={{ marginTop: 32 }}><SectionTitle title="Expansão e Fidelização." /></div>
+            <div style={{ marginTop: 32 }}><SectionTitle title="Expansão e Fidelização." mobile={mobile} /></div>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16, minHeight: 0 }}>
               {/* Reels */}
-              <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...card(0, 'h'), flex: 1, padding: '20px 22px', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                  <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Video size={18} /></IconBadge>
-                  <h3 style={{ color: 'white', fontWeight: 700, fontSize: 17, margin: 0 }}>A Importância dos Reels</h3>
+              <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...card(0, 'h'), flex: 1, padding: '30px 24px', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+                  <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)" mobile={mobile}><Video size={18} /></IconBadge>
+                  <h3 style={{ color: 'white', fontWeight: 700, fontSize: 24, margin: 0 }}>A Importância dos Reels</h3>
                 </div>
-                <p style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.5, marginBottom: 10 }}>Reels representam apenas <strong style={{ color: 'white' }}>0,9%</strong> das views. Gargalo de crescimento.</p>
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: 6, listStyle: 'none', padding: 0, margin: 0 }}>
-                  <BulletItemSm icon="▹" color="#60a5fa" text='Reels atingem <strong style="color:white">não-seguidores</strong>.' />
-                  <BulletItemSm icon="▹" color="#60a5fa" text='Forma mais barata de reverter a perda.' />
-                  <BulletItemSm icon="▹" color="#60a5fa" text='Temas "blockbuster" precisam virar vídeos.' />
+                <p style={{ color: '#94a3b8', fontSize: 18, lineHeight: 1.5, marginBottom: 14 }}>Reels representam apenas <strong style={{ color: 'white' }}>0,9%</strong> das views. Gargalo de crescimento.</p>
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, listStyle: 'none', padding: 0, margin: 0 }}>
+                  <BulletItemSm mobile={mobile} icon="▹" color="#60a5fa" text='Reels atingem <strong style="color:white">não-seguidores</strong>.' />
+                  <BulletItemSm mobile={mobile} icon="▹" color="#60a5fa" text='Forma mais barata de reverter a perda.' />
+                  <BulletItemSm mobile={mobile} icon="▹" color="#60a5fa" text='Temas "blockbuster" precisam virar vídeos.' />
                 </ul>
               </div>
               {/* Stories */}
-              <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...card(1, 'y'), flex: 1, padding: '20px 22px', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                  <IconBadge color="#facc15" bg="rgba(234,179,8,0.2)"><HeartHandshake size={18} /></IconBadge>
-                  <h3 style={{ color: 'white', fontWeight: 700, fontSize: 17, margin: 0 }}>Retenção e Stories</h3>
+              <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...card(1, 'y'), flex: 1, padding: '30px 24px', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+                  <IconBadge color="#facc15" bg="rgba(234,179,8,0.2)" mobile={mobile}><HeartHandshake size={18} /></IconBadge>
+                  <h3 style={{ color: 'white', fontWeight: 700, fontSize: 24, margin: 0 }}>Retenção e Stories</h3>
                 </div>
-                <p style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.5, marginBottom: 10 }}>Perda de (3.651) seguidores. Stories (<strong style={{ color: 'white' }}>6,7%</strong>) devem focar em retenção.</p>
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: 6, listStyle: 'none', padding: 0, margin: 0 }}>
-                  <BulletItemSm icon="▹" color="#facc15" text='Stories para <strong style="color:white">fidelizar</strong> fãs.' />
-                  <BulletItemSm icon="▹" color="#facc15" text='Bastidores e enquetes diárias.' />
-                  <BulletItemSm icon="▹" color="#facc15" text='Sem retenção é um <strong style="color:white">"balde furado"</strong>.' />
+                <p style={{ color: '#94a3b8', fontSize: 18, lineHeight: 1.5, marginBottom: 14 }}>Perda de (3.651) seguidores. Stories (<strong style={{ color: 'white' }}>6,7%</strong>) devem focar em retenção.</p>
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, listStyle: 'none', padding: 0, margin: 0 }}>
+                  <BulletItemSm mobile={mobile} icon="▹" color="#facc15" text='Stories para <strong style="color:white">fidelizar</strong> fãs.' />
+                  <BulletItemSm mobile={mobile} icon="▹" color="#facc15" text='Bastidores e enquetes diárias.' />
+                  <BulletItemSm mobile={mobile} icon="▹" color="#facc15" text='Sem retenção é um <strong style="color:white">"balde furado"</strong>.' />
                 </ul>
               </div>
             </div>

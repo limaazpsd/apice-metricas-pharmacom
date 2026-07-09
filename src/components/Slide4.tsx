@@ -42,38 +42,38 @@ export function Slide4({ mobile }: { mobile?: boolean }) {
               <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.57 (2).jpeg" alt="" style={{ width: Math.round(MOBILE_IMG_W * 0.82), height: Math.round(MOBILE_IMG_H * 0.82), objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_BACK, boxShadow: IMG_SHADOW_BACK, opacity: 0.5, marginRight: -50, transform: 'rotate(-5deg)', transformOrigin: 'center bottom', zIndex: 1, flexShrink: 0 }} />
               <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58 (1).jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
             </div>
-            <div style={{ marginTop: 32 }}><SectionTitle title="Desempenho de Conteúdo." /></div>
+            <div style={{ marginTop: 32 }}><SectionTitle title="Desempenho de Conteúdo." mobile={mobile} /></div>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16, minHeight: 0 }}>
               {/* Top 3 */}
-              <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(0, 'highlight'), flexShrink: 0, padding: '20px 22px' }}>
+              <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(0, 'highlight'), flexShrink: 0, padding: '30px 24px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-                  <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Trophy size={18} /></IconBadge>
-                  <span style={{ color: '#94a3b8', fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Top 3 Posts (Views)</span>
+                  <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)" mobile={mobile}><Trophy size={18} /></IconBadge>
+                  <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Top 3 Posts (Views)</span>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {top3.map(p => (
-                    <div key={p.rank} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: 10, padding: '10px 14px' }}>
-                      <span style={{ color: 'white', fontWeight: 500, fontSize: 14 }}>{p.rank}. {p.title}</span>
-                      <span style={{ color: p.color, fontWeight: 900, fontSize: 22 }}>{p.views}</span>
+                    <div key={p.rank} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: 10, padding: '14px 18px' }}>
+                      <span style={{ color: 'white', fontWeight: 500, fontSize: 20 }}>{p.rank}. {p.title}</span>
+                      <span style={{ color: p.color, fontWeight: 900, fontSize: 34 }}>{p.views}</span>
                     </div>
                   ))}
                 </div>
               </div>
               {/* 2 cards */}
               <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(1), padding: '20px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(1), padding: '30px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                    <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)"><LayoutGrid size={18} /></IconBadge>
-                    <span style={{ color: '#94a3b8', fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Foco</span>
+                    <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)" mobile={mobile}><LayoutGrid size={18} /></IconBadge>
+                    <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Foco</span>
                   </div>
-                  <p style={{ color: 'white', fontSize: 14, lineHeight: 1.5 }}>Feed domina com <strong style={{ color: '#60a5fa', fontSize: 22 }}>92,4%</strong> das visualizações.</p>
+                  <p style={{ color: 'white', fontSize: 20, lineHeight: 1.5 }}>Feed domina com <strong style={{ color: '#60a5fa', fontSize: 34 }}>92,4%</strong> das visualizações.</p>
                 </div>
-                <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(2, 'red'), padding: '20px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardBase(2, 'red'), padding: '30px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                    <IconBadge color="#f87171" bg="rgba(239,68,68,0.22)"><AlertTriangle size={18} /></IconBadge>
-                    <span style={{ color: '#f87171', fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Atenção</span>
+                    <IconBadge color="#f87171" bg="rgba(239,68,68,0.22)" mobile={mobile}><AlertTriangle size={18} /></IconBadge>
+                    <span style={{ color: '#f87171', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Atenção</span>
                   </div>
-                  <p style={{ color: 'white', fontSize: 14, lineHeight: 1.5 }}><strong style={{ color: '#f87171', fontSize: 22 }}>98,5%</strong> das views são de seguidores. Alcance externo: 1,5%.</p>
+                  <p style={{ color: 'white', fontSize: 20, lineHeight: 1.5 }}><strong style={{ color: '#f87171', fontSize: 34 }}>98,5%</strong> das views são de seguidores. Alcance externo: 1,5%.</p>
                 </div>
               </div>
             </div>

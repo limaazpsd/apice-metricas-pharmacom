@@ -79,21 +79,22 @@ export const GRID_CSS = {
 };
 
 // Section title
-export function SectionTitle({ title }: { title: string }) {
+export function SectionTitle({ title, mobile }: { title: string; mobile?: boolean }) {
   return (
     <>
-      <h2 className="text-white font-extrabold leading-none tracking-tight" style={{ fontSize: 66 }}>
+      <h2 className="text-white font-extrabold leading-none tracking-tight" style={{ fontSize: mobile ? 76 : 66 }}>
         {title.replace(/\.$/, '')}<span style={{ color: '#1d4ed8' }}>.</span>
       </h2>
-      <div style={{ height: 3, width: 90, borderRadius: 99, background: 'linear-gradient(to right, #1d4ed8, #38bdf8)', marginTop: 12, marginBottom: 38 }} />
+      <div style={{ height: mobile ? 4 : 3, width: mobile ? 110 : 90, borderRadius: 99, background: 'linear-gradient(to right, #1d4ed8, #38bdf8)', marginTop: 12, marginBottom: mobile ? 48 : 38 }} />
     </>
   );
 }
 
 // Icon badge
-export function IconBadge({ color, bg, children }: { color: string; bg: string; children: React.ReactNode }) {
+export function IconBadge({ color, bg, children, mobile }: { color: string; bg: string; children: React.ReactNode; mobile?: boolean }) {
+  const size = mobile ? 56 : 44;
   return (
-    <span className="flex items-center justify-center rounded-xl" style={{ width: 44, height: 44, background: bg, color, flexShrink: 0 }}>
+    <span className="flex items-center justify-center rounded-xl" style={{ width: size, height: size, background: bg, color, flexShrink: 0, '& > svg': { width: mobile ? 28 : 20, height: mobile ? 28 : 20 } } as any}>
       {children}
     </span>
   );

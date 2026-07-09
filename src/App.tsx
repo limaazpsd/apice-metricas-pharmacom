@@ -85,18 +85,18 @@ export default function App() {
         style={{
           position: 'fixed', top: 0, left: 0, right: 0,
           zIndex: 500,                               // above everything
-          padding: '18px 120px',
+          padding: isMobile ? '18px 24px' : '24px 80px',
           background: 'linear-gradient(to bottom, rgba(7,13,20,1) 0%, rgba(7,13,20,0.92) 70%, transparent 100%)',
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
           pointerEvents: 'none',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <span style={{ color: '#1d4ed8', fontWeight: 800, fontSize: 22, letterSpacing: 3 }}>{num}</span>
-          <div style={{ width: 1, height: 22, background: 'rgba(255,255,255,0.2)' }} />
-          <span style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, fontSize: 13, letterSpacing: '0.22em' }}>{title}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 10 : 16 }}>
+          <span style={{ color: '#1d4ed8', fontWeight: 800, fontSize: isMobile ? 18 : 24, letterSpacing: 2 }}>{num}</span>
+          <div style={{ width: 1, height: isMobile ? 18 : 24, background: 'rgba(255,255,255,0.2)' }} />
+          <span style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, fontSize: isMobile ? 11 : 14, letterSpacing: '0.22em' }}>{title}</span>
         </div>
-        <img src="/apice-digital.png" alt="Ápice" style={{ height: 34, objectFit: 'contain' }} />
+        <img src="/apice-digital.png" alt="Ápice" style={{ height: isMobile ? 24 : 34, objectFit: 'contain' }} />
       </div>
 
       {/* ── SLIDE CANVAS — only this wrapper has the opacity transition ── */}

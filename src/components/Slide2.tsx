@@ -18,10 +18,10 @@ interface MetricCardProps {
   index: number; hovered: number | null; setHovered: (i: number | null) => void;
   icon: React.ReactNode; iconBg: string; iconColor: string;
   label: string; value: string; sub: string; subGreen?: boolean; variant?: CardVariant;
-  style?: React.CSSProperties;
+  style?: React.CSSProperties; mobile?: boolean;
 }
 
-function MetricCard({ index, hovered, setHovered, icon, iconBg, iconColor, label, value, sub, subGreen, variant = 'default', style }: MetricCardProps) {
+function MetricCard({ index, hovered, setHovered, icon, iconBg, iconColor, label, value, sub, subGreen, variant = 'default', style, mobile }: MetricCardProps) {
   const isHov = hovered === index;
   const bg    = variant === 'red' ? BG_CARD_R : variant === 'highlight' ? BG_CARD_H : BG_CARD;
   const bord  = isHov ? (variant === 'red' ? BORDER_R_HOV : variant === 'highlight' ? BORDER_H_HOV : BORDER_HOV) : (variant === 'red' ? BORDER_R : variant === 'highlight' ? BORDER_H : BORDER);
@@ -32,14 +32,14 @@ function MetricCard({ index, hovered, setHovered, icon, iconBg, iconColor, label
   return (
     <div
       onMouseEnter={() => setHovered(index)} onMouseLeave={() => setHovered(null)}
-      style={{ background: bg, border: bord, boxShadow: shad, borderRadius: 16, padding: '24px 26px', display: 'flex', flexDirection: 'column', cursor: 'default', transform: isHov ? 'translateY(-4px)' : 'translateY(0)', transition: 'all 0.22s ease', ...style }}
+      style={{ background: bg, border: bord, boxShadow: shad, borderRadius: 16, padding: mobile ? '32px 28px' : '24px 26px', display: 'flex', flexDirection: 'column', cursor: 'default', transform: isHov ? 'translateY(-4px)' : 'translateY(0)', transition: 'all 0.22s ease', ...style }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-        <IconBadge color={iconColor} bg={iconBg}>{icon}</IconBadge>
-        <span style={{ color: labelColor, fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>{label}</span>
+        <IconBadge color={iconColor} bg={iconBg} mobile={mobile}>{icon}</IconBadge>
+        <span style={{ color: labelColor, fontSize: mobile ? 16 : 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>{label}</span>
       </div>
-      <p style={{ color: valueColor, fontSize: 54, fontWeight: 900, lineHeight: 1, margin: 0, marginBottom: 10 }}>{value}</p>
-      <p style={{ color: subColor, fontSize: 15, fontWeight: 500, margin: 0 }}>{sub}</p>
+      <p style={{ color: valueColor, fontSize: mobile ? 72 : 54, fontWeight: 900, lineHeight: 1, margin: 0, marginBottom: 10 }}>{value}</p>
+      <p style={{ color: subColor, fontSize: mobile ? 20 : 15, fontWeight: 500, margin: 0 }}>{sub}</p>
     </div>
   );
 }
@@ -79,10 +79,10 @@ export function Slide2({ mobile }: { mobile?: boolean }) {
               <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.58.jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT, position: 'relative', zIndex: 2, flexShrink: 0 }} />
             </div>
             {/* Title */}
-            <div style={{ marginTop: 32 }}><SectionTitle title="Visão Geral do Perfil." /></div>
+            <div style={{ marginTop: 32 }}><SectionTitle title="Visão Geral do Perfil." mobile={mobile} /></div>
             {/* 2×2 grid */}
             <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: 18, minHeight: 0 }}>
-              {cards.map((c, i) => <MetricCard key={i} index={i} hovered={hovered} setHovered={setHovered} {...c} />)}
+              {cards.map((c, i) => <MetricCard key={i} index={i} hovered={hovered} setHovered={setHovered} mobile={mobile} {...c} />)}
             </div>
           </>
         ) : (

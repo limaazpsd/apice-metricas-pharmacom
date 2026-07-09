@@ -41,7 +41,7 @@ export function Slide6({ mobile }: { mobile?: boolean }) {
         className={`relative z-10 w-full h-full flex flex-col transition-all duration-700 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         style={mobile ? SLIDE_PAD_MOBILE : SLIDE_PAD}
       >
-        <SectionTitle title="Próximos Passos." />
+        <SectionTitle title="Próximos Passos." mobile={mobile} />
 
         <div style={{ display: 'flex', flexDirection: mobile ? 'column' : 'row', gap: mobile ? 20 : 48, flex: 1, minHeight: 0 }}>
           {/* LEFT — acertos + plano */}
@@ -49,15 +49,15 @@ export function Slide6({ mobile }: { mobile?: boolean }) {
             {/* Acertos — green */}
             <div
               onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)}
-              style={{ ...card(0, 'g'), padding: mobile ? '20px 24px' : '26px 30px', display: 'flex', flexDirection: 'column' }}
+              style={{ ...card(0, 'g'), padding: mobile ? '30px 32px' : '26px 30px', display: 'flex', flexDirection: 'column' }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                <IconBadge color="#4ade80" bg="rgba(34,197,94,0.2)"><CheckCircle size={20} /></IconBadge>
-                <h3 style={{ color: '#4ade80', fontWeight: 700, fontSize: mobile ? 18 : 20, margin: 0 }}>O que funcionou (Acertos)</h3>
+                <IconBadge color="#4ade80" bg="rgba(34,197,94,0.2)" mobile={mobile}><CheckCircle size={20} /></IconBadge>
+                <h3 style={{ color: '#4ade80', fontWeight: 700, fontSize: mobile ? 28 : 20, margin: 0 }}>O que funcionou (Acertos)</h3>
               </div>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: 14, listStyle: 'none', padding: 0, margin: 0 }}>
                 {[['✅', 'Temas Polêmicos:', 'Engajamento brutal no nicho.'], ['✅', 'Gatilhos:', 'Títulos investigativos que retêm a leitura.'], ['✅', 'Ativação da Base:', 'Salto histórico no alcance interno.']].map(([icon, bold, rest], i) => (
-                  <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', color: '#94a3b8', fontSize: mobile ? 14 : 17, lineHeight: 1.5 }}>
+                  <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', color: '#94a3b8', fontSize: mobile ? 20 : 17, lineHeight: 1.5 }}>
                     <span style={{ flexShrink: 0 }}>{icon}</span>
                     <span><strong style={{ color: 'white' }}>{bold}</strong> {rest}</span>
                   </li>
@@ -68,15 +68,15 @@ export function Slide6({ mobile }: { mobile?: boolean }) {
             {/* Plano — blue */}
             <div
               onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)}
-              style={{ ...card(1, 'h'), padding: mobile ? '20px 24px' : '26px 30px', display: 'flex', flexDirection: 'column' }}
+              style={{ ...card(1, 'h'), padding: mobile ? '30px 32px' : '26px 30px', display: 'flex', flexDirection: 'column' }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Rocket size={20} /></IconBadge>
-                <h3 style={{ color: '#38bdf8', fontWeight: 700, fontSize: mobile ? 18 : 20, margin: 0 }}>Plano de Ação</h3>
+                <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)" mobile={mobile}><Rocket size={20} /></IconBadge>
+                <h3 style={{ color: '#38bdf8', fontWeight: 700, fontSize: mobile ? 28 : 20, margin: 0 }}>Plano de Ação</h3>
               </div>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: 14, listStyle: 'none', padding: 0, margin: 0 }}>
                 {[['🚀', 'Volume Triplicado em Reels:', 'Foco em vídeos para tracionar público frio.'], ['🚀', 'Stories Intensivos:', 'Enquetes para estancar a perda de seguidores.'], ['🚀', 'CTAs Estratégicos:', 'Forçar compartilhamento no feed para viralizar.']].map(([icon, bold, rest], i) => (
-                  <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', color: '#94a3b8', fontSize: mobile ? 14 : 17, lineHeight: 1.5 }}>
+                  <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', color: '#94a3b8', fontSize: mobile ? 20 : 17, lineHeight: 1.5 }}>
                     <span style={{ flexShrink: 0 }}>{icon}</span>
                     <span><strong style={{ color: 'white' }}>{bold}</strong> {rest}</span>
                   </li>
@@ -92,17 +92,17 @@ export function Slide6({ mobile }: { mobile?: boolean }) {
               ...card(2, 'r'),
               flex: mobile ? 1 : 'none', flexShrink: 0, width: mobile ? '100%' : 520,
               display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-              textAlign: 'center', padding: mobile ? '30px 24px' : '40px 44px',
+              textAlign: 'center', padding: mobile ? '40px 32px' : '40px 44px',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: mobile ? 72 : 96, height: mobile ? 72 : 96, borderRadius: '50%', background: 'rgba(239,68,68,0.15)', border: '1px solid rgba(239,68,68,0.3)', marginBottom: 24 }}>
-              <Target style={{ color: '#f87171', width: mobile ? 36 : 50, height: mobile ? 36 : 50 }} />
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: mobile ? 110 : 96, height: mobile ? 110 : 96, borderRadius: '50%', background: 'rgba(239,68,68,0.15)', border: '1px solid rgba(239,68,68,0.3)', marginBottom: 24 }}>
+              <Target style={{ color: '#f87171', width: mobile ? 56 : 50, height: mobile ? 56 : 50 }} />
             </div>
-            <h3 style={{ color: '#f87171', fontWeight: 900, fontSize: mobile ? 28 : 36, marginBottom: 20 }}>O Grande Desafio</h3>
-            <p style={{ color: 'white', fontSize: mobile ? 16 : 21, lineHeight: 1.6, marginBottom: 16 }}>
+            <h3 style={{ color: '#f87171', fontWeight: 900, fontSize: mobile ? 48 : 36, marginBottom: 20 }}>O Grande Desafio</h3>
+            <p style={{ color: 'white', fontSize: mobile ? 26 : 21, lineHeight: 1.6, marginBottom: 16 }}>
               O perfil reconquistou a base atual, mas está <strong style={{ color: '#f87171' }}>estagnado fora da bolha</strong>.
             </p>
-            <p style={{ color: '#94a3b8', fontSize: mobile ? 14 : 17, lineHeight: 1.6 }}>
+            <p style={{ color: '#94a3b8', fontSize: mobile ? 22 : 17, lineHeight: 1.6 }}>
               A virada de chave é <strong style={{ color: 'white' }}>atrair (Reels)</strong> e <strong style={{ color: 'white' }}>reter (Stories)</strong> simultaneamente.
             </p>
           </div>

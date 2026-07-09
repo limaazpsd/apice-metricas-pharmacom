@@ -40,38 +40,38 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 540, flexShrink: 0 }}>
               <img src="/metricas-reais/WhatsApp Image 2026-07-07 at 17.16.56 (1).jpeg" alt="" style={{ width: MOBILE_IMG_W, height: MOBILE_IMG_H, objectFit: 'cover', objectPosition: 'top', borderRadius: IMG_RADIUS, border: IMG_BORDER_FRONT, boxShadow: IMG_SHADOW_FRONT }} />
             </div>
-            <div style={{ marginTop: 32 }}><SectionTitle title="Público e Atividade." /></div>
+            <div style={{ marginTop: 32 }}><SectionTitle title="Público e Atividade." mobile={mobile} /></div>
             {/* Cards */}
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16, minHeight: 0 }}>
               {/* Row: Gênero + Localização */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, flexShrink: 0 }}>
-                <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(0), padding: '22px 20px' }}>
+                <div onMouseEnter={() => setHovered(0)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(0), padding: '30px 24px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-                    <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)"><Users size={18} /></IconBadge>
-                    <span style={{ color: '#94a3b8', fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Gênero</span>
+                    <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)" mobile={mobile}><Users size={18} /></IconBadge>
+                    <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Gênero</span>
                   </div>
-                  <p style={{ color: 'white', fontSize: 30, fontWeight: 900, lineHeight: 1.2, margin: 0, marginBottom: 4 }}>58,9% <span style={{ fontSize: 14, fontWeight: 500, color: '#64748b' }}>Homens</span></p>
-                  <p style={{ color: 'white', fontSize: 30, fontWeight: 900, lineHeight: 1.2, margin: 0 }}>41,1% <span style={{ fontSize: 14, fontWeight: 500, color: '#64748b' }}>Mulheres</span></p>
+                  <p style={{ color: 'white', fontSize: 44, fontWeight: 900, lineHeight: 1.2, margin: 0, marginBottom: 4 }}>58,9% <span style={{ fontSize: 20, fontWeight: 500, color: '#64748b' }}>Homens</span></p>
+                  <p style={{ color: 'white', fontSize: 44, fontWeight: 900, lineHeight: 1.2, margin: 0 }}>41,1% <span style={{ fontSize: 20, fontWeight: 500, color: '#64748b' }}>Mulheres</span></p>
                 </div>
-                <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(1), padding: '22px 20px' }}>
+                <div onMouseEnter={() => setHovered(1)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(1), padding: '30px 24px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-                    <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)"><MapPin size={18} /></IconBadge>
-                    <span style={{ color: '#94a3b8', fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Localização</span>
+                    <IconBadge color="#60a5fa" bg="rgba(37,99,235,0.18)" mobile={mobile}><MapPin size={18} /></IconBadge>
+                    <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Localização</span>
                   </div>
-                  <p style={{ color: 'white', fontSize: 38, fontWeight: 900, lineHeight: 1.1, marginTop: 8, margin: 0 }}>96,3% <span style={{ fontSize: 14, fontWeight: 500, color: '#64748b' }}>Brasil</span></p>
+                  <p style={{ color: 'white', fontSize: 54, fontWeight: 900, lineHeight: 1.1, marginTop: 8, margin: 0 }}>96,3% <span style={{ fontSize: 20, fontWeight: 500, color: '#64748b' }}>Brasil</span></p>
                 </div>
               </div>
               {/* Horários (fills rest) */}
-              <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), flex: 1, padding: '22px 24px', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+              <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), flex: 1, padding: '30px 28px', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-                  <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Clock size={18} /></IconBadge>
-                  <span style={{ color: '#94a3b8', fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Horários de Pico</span>
+                  <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)" mobile={mobile}><Clock size={18} /></IconBadge>
+                  <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Horários de Pico</span>
                 </div>
-                <p style={{ color: 'white', fontSize: 17, lineHeight: 1.55, marginBottom: 16 }}>A audiência se mantém ativa das <strong style={{ color: '#60a5fa' }}>09h às 21h</strong>.</p>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: 12, padding: '14px 18px' }}>
-                  <span style={{ color: 'white', fontSize: 14, fontWeight: 600 }}>Picos:</span>
-                  <div style={{ display: 'flex', gap: 8 }}>
-                    {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 17, fontWeight: 700, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 10, padding: '6px 14px' }}>{h}</span>)}
+                <p style={{ color: 'white', fontSize: 24, lineHeight: 1.55, marginBottom: 20 }}>A audiência se mantém ativa das <strong style={{ color: '#60a5fa' }}>09h às 21h</strong>.</p>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: 12, padding: '20px 24px' }}>
+                  <span style={{ color: 'white', fontSize: 20, fontWeight: 600 }}>Picos:</span>
+                  <div style={{ display: 'flex', gap: 10 }}>
+                    {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 22, fontWeight: 700, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 10, padding: '8px 16px' }}>{h}</span>)}
                   </div>
                 </div>
               </div>
