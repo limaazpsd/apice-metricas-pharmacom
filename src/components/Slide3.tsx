@@ -62,17 +62,13 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
                 </div>
               </div>
               {/* Horários (fills rest) */}
-              <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), flex: 1, padding: '30px 28px', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+              <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), flex: 1, padding: '30px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
                   <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)" mobile={mobile}><Clock size={18} /></IconBadge>
-                  <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>Horários de Pico</span>
+                  <span style={{ color: '#94a3b8', fontSize: 16, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', textAlign: 'center' }}>Picos de visualização da página</span>
                 </div>
-                <p style={{ color: 'white', fontSize: 24, lineHeight: 1.55, marginBottom: 20 }}>A audiência se mantém ativa das <strong style={{ color: '#60a5fa' }}>09h às 21h</strong>.</p>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: 12, padding: '20px 24px' }}>
-                  <span style={{ color: 'white', fontSize: 20, fontWeight: 600 }}>Picos:</span>
-                  <div style={{ display: 'flex', gap: 10 }}>
-                    {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 22, fontWeight: 700, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 10, padding: '8px 16px' }}>{h}</span>)}
-                  </div>
+                <div style={{ display: 'flex', gap: 16 }}>
+                  {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 28, fontWeight: 800, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 12, padding: '14px 28px' }}>{h}</span>)}
                 </div>
               </div>
             </div>
@@ -100,17 +96,13 @@ export function Slide3({ mobile }: { mobile?: boolean }) {
                     <p style={{ color: 'white', fontSize: 48, fontWeight: 900, lineHeight: 1.1, marginTop: 10 }}>96,3% <span style={{ fontSize: 17, fontWeight: 500, color: '#64748b' }}>Brasil</span></p>
                   </div>
                 </div>
-                <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), flex: 1, padding: '26px 30px', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
+                <div onMouseEnter={() => setHovered(2)} onMouseLeave={() => setHovered(null)} style={{ ...cardStyle(2, 'highlight'), flex: 1, padding: '26px 30px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
                     <IconBadge color="#38bdf8" bg="rgba(37,99,235,0.25)"><Clock size={20} /></IconBadge>
-                    <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Horários de Pico</span>
+                    <span style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', textAlign: 'center' }}>Picos de visualização da página</span>
                   </div>
-                  <p style={{ color: 'white', fontSize: 20, lineHeight: 1.55, marginBottom: 20 }}>A audiência se mantém altamente ativa das <strong style={{ color: '#60a5fa' }}>09h às 21h</strong>.</p>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.04)', borderRadius: 12, padding: '16px 20px' }}>
-                    <span style={{ color: 'white', fontSize: 16, fontWeight: 600 }}>Picos de audiência online:</span>
-                    <div style={{ display: 'flex', gap: 10 }}>
-                      {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 20, fontWeight: 700, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 10, padding: '8px 18px' }}>{h}</span>)}
-                    </div>
+                  <div style={{ display: 'flex', gap: 14 }}>
+                    {['12:00', '15:00', '18:00'].map(h => <span key={h} style={{ color: 'white', fontSize: 22, fontWeight: 800, background: 'rgba(29,78,216,0.35)', border: '1px solid rgba(37,99,235,0.5)', borderRadius: 12, padding: '10px 24px' }}>{h}</span>)}
                   </div>
                 </div>
               </div>
